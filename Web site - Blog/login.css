@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,400;6..12,500&family=Ubuntu&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Nunito Sans'
+}
+
+body {
+    background-image: url(https://www.educacaoetransformacao.com.br/wp-content/uploads/2018/06/bordo.jpg);
+    background-repeat: no-repeat;
+    /* aqui é ele não se repetir */
+    background-size: cover;
+    /* cover é para que ele ocupe todo o espaço */
+    background-attachment: fixed;
+    /* background-attachment é para fixar e corir toda a tela */
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 100px;
+}
+
+.card {
+    background-color: #ffffff90;
+    padding: 40px; /* aumentar o card */
+    border-radius: 4%;
+    box-shadow:3px 3px 1px 0px #00000080 ;  
+    /* sombras */
+
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px; /* aqui se cria uma margem no meu h1 para separar-lo dos demais itens */
+    color:chocolate;
+}
+
+.label-float input{
+    width: 100%;
+    padding: 6px;
+    display: inline-block; /*para a minha input fixar em uma linha e mais nada fazer parte dela*/
+    border: 0;
+    border-bottom: 2px solid #00000080;
+    background-color: transparent;
+    outline: none; /* borda da input */
+    min-width:182px ; /* minumo de largura */
+    font-size: 16px;
+    transition: all .3s ease-out;
+    border-radius: 0;
+}
+
+.label-float {
+ position: relative;
+ margin-top: 13px;
+ margin-bottom: 5%;
+ padding-top: 5%;
+ /* ambas controlam o posicionamento e o espaçamento dos elementos
+ margin-top = margem superior
+ margin-bottom =margem inferior
+ padding-top = espaço interno entre o conteúdo e a borda */
+}
+
+.label-float input:focus{
+    border-bottom: 2px solid crimson;
+
+}
