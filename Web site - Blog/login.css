@@ -79,11 +79,13 @@ h1 {
     /* a transição da minha label para que ela suba com as configurações abaixo */
 }
 
-.label-float input:focus + label {
+.label-float input:focus + label, 
+.label-float input:valid + label{
     font-size: 13px;
     margin-top: 0;
     color: crimson;
 }
+/* ou seja, se tiver algum conteúdo valido faça esse mesmo efeito */
 
 button{
     background-color: transparent;
@@ -132,3 +134,12 @@ a:hover{
     color: #00000080 ;
     transition: all .3s ease-out;
 }
+
+.fa-eye{
+    position: absolute;
+    top: 15px;
+    right: 10px;
+    cursor: pointer;
+    color: #00000080;
+}
+
