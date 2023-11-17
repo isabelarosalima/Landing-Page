@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing page</title>
+    <link rel="stylesheet" href="cadastro.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- site de icones -->
+    <link rel="stylesheet" href="media.css">
+</head>
+<body>
+    <header>
+        <div id="tittle">
+            <h1>Literacia</h1>
+            <h1>Conectada</h1>
+        </div>
+        
+        <ul>
+            <li><a href="#">Início</a></li>
+            <li><a href="#">Sobre Nós</a></li>
+            <li><a href="#">Contato</a></li>
+            <li><a href="#">Serviços</a></li>
+            <li><a href="cadastro.html">Cadastro</a></li>
+            <li><a href="login.html" id="login-link">Já tem uma conta?</a></li>
+        </ul>
+        
+    </header>
+
+    <main>
+        <aside>  
+            <!-- tag semantica que define uma pagina que tenha um lado -->
+            <h2><span>Increva-se agora</span></h2>
+            <h2>na Literacia</h2>
+            <p>udjhwelnfiusefhiuafboiuweguygiugyyyyyyyyyyyyyyyyyyvuygv,kbj,ygkbhfiuweikjsedbvij</p>
+            
+                <form>
+                    <div class='card'>
+                        <div class='label-float'>
+                          <input type='text' id='nome' placeholder='' required>
+                          <label for='nome'>Nome</label>
+                        </div>
+                  
+                        <div class='label-float'>
+                            <input type='text' id='usuario' placeholder='' required>
+                            <label for='usuario'>Usuário</label>
+                        </div>
+                        
+                        <div class='label-float'>
+                            <input type='password' id='senha' placeholder='' required>
+                            <label for='senha'>senha</label>
+                            <i id= 'verSenha' class="fa fa-eye" aria-hidden="true"></i>
+                        </div>
+              
+                        <div class='label-float'>
+                            <input type='text' id='confirmarSenha' placeholder='' required>
+                            <label for='confirmarSenha'>Confirmar Senha</label>
+                            <i id= 'verConfirmarSenha' class="fa fa-eye" aria-hidden="true"></i>
+                        </div>
+              
+                            <div class="justify-center">
+                                <input type="submit" value="enviar">
+                            </div>
+                          
+                          <p>Já possui uma conta? Faça o
+                              <a href="login.html" class="linkLogin">login</a>
+                          </p>
+                      </div>
+                <!-- tag semantica para campos de pesquisa -->
+                </form>
+        </aside>
+
+        <article>
+            <!-- tag semantica para abrigar imagens -->
+            <img src="./public/iamgem2pt2.png" alt="mulher-roxa">
+        </article>
+    </main>
+   
+</body>
+</html>
+
+
+<script>
+    var btn = document.querySelector('#verSenha')
+    var btnConfirm = document.querySelector('#verConfirmarSenha')
+    /*minha variavel botao esta acessando o documento e através do querySelector eu vou procurar a minha class, logo em seguida adicionei minha class a minha variavel*/
+        
+        btn.addEventListener('click', ()=>{
+        let inputSenha = document.querySelector('#senha')
+    
+            if(inputSenha.getAttribute('type') == 'password'){
+            inputSenha.setAttribute('type', 'text')
+
+            } else {
+            inputSenha.setAttribute('type', 'password')
+            }
+        })
+
+        /*inserir um evento que logo em seguida acontecerá algo */
+
+        btnConfirm.addEventListener('click', ()=>{
+        let inputConfirmSenha = document.querySelector('#confirmarSenha')
+    
+            if(inputConfirmSenha.getAttribute('type') == 'password'){
+            inputConfirmSenha.setAttribute('type', 'text')
+            } else {
+                inputConfirmSenha.setAttribute('type', 'password')
+            }
+        })
+    
+    </script>
+
+  
+  
