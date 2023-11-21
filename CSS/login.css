@@ -5,17 +5,15 @@
 }
 
 body{
-    background-image: url(./public/imagemPrincipal.png);
-    background-repeat: no-repeat;
-    /* aqui é para a imagem não se repetir */
     background-size: cover;
     /* cover é para que ele ocupe todo o espaço */
     background-attachment: fixed;
     /* background-attachment é para fixar e cobrir toda a tela */
-    color: aliceblue;
+    color: whitesmoke;
     max-width: 1200px;
     margin: 0 auto;
     padding: 15;
+    background-color: #000000eb;
 }
 
 header{
@@ -38,8 +36,6 @@ li{
     margin: 20px;
 }
 
-
-
 main{
     display: flex;
     flex-direction: row;
@@ -54,7 +50,7 @@ h2{
 }
 
 span{
-    color: #1f1f76;
+    color: #91310c;
 }
 
 p{
@@ -67,16 +63,14 @@ img{
     width: 620px;
 }
 
-
 .card {
-    background-color: #ffffff90;
+    background-color: #e5dada;
     padding: 30px; /* aumentar o card */
     border-radius: 4%;
     box-shadow:3px 3px 1px 0px #00000080 ;  
     /* sombras */
     width: 400px; 
 }
-
 
 .label-float input{
     width: 100%;
@@ -92,7 +86,6 @@ img{
     border-radius: 0;
 }
 
-
 .label-float {
     position: relative;
     margin-top: 13px;
@@ -102,13 +95,11 @@ img{
     margin-top = margem superior
     margin-bottom =margem inferior
     padding-top = espaço interno entre o conteúdo e a borda */
-   }
-
-   
-.label-float input:focus{
-    border-bottom: 2px solid crimson;
 }
 
+.label-float input:focus{
+    border-bottom: 2px solid #91310c;
+}
 
 .label-float label{
     color: #00000080;
@@ -121,14 +112,12 @@ img{
     /* a transição da minha label para que ela suba com as configurações abaixo */
 }
 
-
 .label-float input:focus + label, 
 .label-float input:valid + label{
     font-size: 13px;
     margin-top: 0;
-    color: crimson;
+    color: #91310c;
 }
-
 
 .justify-center{
     display: flex;
@@ -138,21 +127,19 @@ img{
 form [type ='submit']{
     height: 50px;
     width: 50%;
-    background-color: #1f1f76;
-    border-color: #00000080;
-    color: beige;
+    background-color: #91310c;
+    border-color: #91310c;
+    color: whitesmoke;
     font-weight: bold; 
     font-size: 13pt;  
     margin-top: 15px;
     border-radius: 15px;
     outline: none;
-
 }
 
 form [type ='submit']:hover{
     cursor: pointer;
-    background-color: #00000080;
-    color: rgb(206, 138, 1) ;
+    color: wheat;
     transition: all .5s ease-out;
 }
 
@@ -164,7 +151,6 @@ form [type ='submit']:hover{
     color: #00000080;
 }
 
-
 hr{
     margin-top: 10%;
     margin-bottom: 10%;
@@ -172,43 +158,47 @@ hr{
 }
 
 p{
-    color: #00000080;
+    color: #000000eb;
     font-size: 14pt;
     text-align: center;
+    font-weight: 200;
 }
 
 .linkLogin{
-    color: #d2691e80;
+    color: whitesmoke;
     font-weight: bold;
     text-decoration: none;
     
 }
 
 #login-link{
-    border: 2px solid #1f1f76;
+    border: 2px solid #91310c;
     padding: 10px;
     border-radius: 15px;
-}
-
-a:hover {
-    color: #00000080 ;
-    transition: all .3s ease-out;
-}
-
-a{
-    color:  white;
-    text-decoration: none;
+    color: whitesmoke;
 }
 
 #login-link:hover{
-    background-color: #1f1f76;
-    color:  white;
+    background-color: #91310c;
+    color:  wheat;
+}
+
+a:hover {
+    color: 91310c ;
+    transition: all .3s ease-out;
+    font-weight: bold;
+    color: wheat;
+}
+
+a{
+    color:  whitesmoke;
+    text-decoration: none;
 }
 
 .tituloCard{
     text-align: center;
     margin-bottom: 20px; /* aqui se cria uma margem no meu h1 para separar-lo dos demais itens */
-    color:#d2691e;
+    color:#91310c;
 
 
 }
