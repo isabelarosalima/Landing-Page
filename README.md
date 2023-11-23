@@ -1,4 +1,4 @@
-<h1> Pojeto Website (Landing Page)</h1>
+<h1> Projeto Website (Landing Page)</h1>
 
 <p>
   O <b>objetivo</b> desse projeto é aplicar todos os meus conhecimentos estudados até agora na criação de um website simples! <br> <br>
