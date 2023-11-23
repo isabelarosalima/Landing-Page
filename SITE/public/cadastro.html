@@ -52,6 +52,16 @@
                         <input type='text' id='usuario' placeholder='' required>
                         <label for='usuario' id="labelUsuario">Usuário</label>
                     </div>
+
+                    <div class='label-float'>
+                        <input type='email' id='email' placeholder='' required>
+                        <label for='email' id="labelEmail">E-mail</label>
+                    </div>
+
+                    <div class='label-float'>
+                        <input type='email' id='confirmarEmail' placeholder='' required>
+                        <label for='confirmarEmail' id="labelConfirmarEmail">Usuário</label>
+                    </div>
                     
                     <div class='label-float'>
                         <input type='password' id='senha' placeholder='' required>
@@ -98,10 +108,18 @@ var labelSenha= document.querySelector('#labelSenha');
 var confirmarSenha= document.querySelector('#confirmarSenha');
 var labelConfirmarSenha= document.querySelector('#labelConfirmarSenha');
 
+var email= document.querySelector('#email');
+var labelEmail= document.querySelector('#labelEmail');
+
+var confirmarEmail= document.querySelector('#confirmarEmail');
+var labelConfirmarEmail = document.querySelector('#labelConfirmarEmail');
+
 var validNome = false;
 var validUsuario = false;
 var validSenha = false;
 var validConfirme = false;
+var validEmail = false;
+var validConfirmarEmail = false;
     // false = formulario nao preenchido
 
 var msgError = document.querySelector('#msgError')
@@ -164,6 +182,35 @@ confirmarSenha.addEventListener('keyup', () => {
     }
 })
 
+email.addEventListener('keyup', () => { 
+    if(email.value){
+        labelEmail.setAttribute('style', 'color: red')
+        labelEmail.innerHTML = 'E-mail *'
+        email.setAttribute('style', 'border-color: red')
+        validEmail = false
+    }else{
+        labelEmail.setAttribute('style', 'color: green')
+        labelEmail.innerHTML = 'E-mail'
+        email.setAttribute('style', 'border-color: green')
+        validEmail = true
+    }
+})
+
+confirmarEmail.addEventListener('keyup', () => { 
+    if(confirmarEmail.value != email.value){
+        labelConfirmarEmail.setAttribute('style', 'color: red')
+        labelConfirmarEmail.innerHTML = 'Confirmar E-mail *Os e-mails não conferem'
+        confirmarEmail.setAttribute('style', 'border-color: red')
+        validConfirmarEmail = false
+    }else{
+        labelConfirmarEmail.setAttribute('style', 'color: green')
+        labelConfirmarEmail.innerHTML = 'Confirmar E-mail'
+        confirmarEmail.setAttribute('style', 'border-color: green')
+        validConfirmarEmail = true
+    }
+})
+
+
 function cadastrar(){
     if(validNome && validUsuario && validSenha && 
     validConfirme){0
@@ -206,5 +253,78 @@ btnConfirm.addEventListener('click', ()=>{
      inputConfirmSenha.setAttribute('type', 'password')
     }
 })
-
 </script>
+
+
+<script>
+    function cadastrar() {
+      aguardar();
+  
+      //Recupere o valor da nova input pelo nome do id
+      // Agora vá para o método fetch logo abaixo
+      var nomeVar = nome.value;
+      var usuarioVar = usuario.value;
+      var emailVar = email.value;
+      var senhaVar = senha.value;
+      if (
+        nomeVar == "" ||
+        emailVar == "" ||
+        senhaVar == "" ||
+        usuarioVar == "" 
+      ) {
+        cardErro.style.display = "block";
+        mensagem_erro.innerHTML =
+          "(Mensagem de erro para todos os campos em branco)";
+  
+        finalizarAguardar();
+        return false;
+      } else {
+        setInterval(sumirMensagem, 5000);
+      }
+  
+      // Enviando o valor da nova input
+      fetch("/usuarios/cadastrar", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          // crie um atributo que recebe o valor recuperado aqui
+          // Agora vá para o arquivo routes/usuario.js
+          nomeServer: nomeVar,
+          emailServer: emailVar,
+          senhaServer: senhaVar,
+          usuarioServer: usuarioVar,
+        }),
+      })
+        .then(function (resposta) {
+          console.log("resposta: ", resposta);
+  
+          if (resposta.ok) {
+            cardErro.style.display = "block";
+  
+            mensagem_erro.innerHTML =
+              "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
+  
+            setTimeout(() => {
+              window.location = "login.html";
+            }, "2000");
+  
+            limparFormulario();
+            finalizarAguardar();
+          } else {
+            throw "Houve um erro ao tentar realizar o cadastro!";
+          }
+        })
+        .catch(function (resposta) {
+          console.log(`#ERRO: ${resposta}`);
+          finalizarAguardar();
+        });
+  
+      return false;
+    }
+
+    function sumirMensagem() {
+      cardErro.style.display = "none";
+    }
+  </script>
