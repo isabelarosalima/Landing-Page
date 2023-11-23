@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- site de icones -->
     <link rel="stylesheet" href="./CSS/media.css">
+    <link rel="stylesheet" href="cadastro.js">
 </head>
 <body>
     <header>
@@ -37,31 +38,35 @@
         <article>
             <!-- tag semantica para abrigar imagens -->
             <form>
+            
+                <div id="msgError"></div>
+                <div id="msgSuccess"></div>
+
                 <div class='card'>
                     <div class='label-float'>
                       <input type='text' id='nome' placeholder='' required>
-                      <label for='nome'>Nome</label>
+                      <label for='nome' id="labelNome">Nome</label>
                     </div>
               
                     <div class='label-float'>
                         <input type='text' id='usuario' placeholder='' required>
-                        <label for='usuario'>Usuário</label>
+                        <label for='usuario' id="labelUsuario">Usuário</label>
                     </div>
                     
                     <div class='label-float'>
                         <input type='password' id='senha' placeholder='' required>
-                        <label for='senha'>senha</label>
+                        <label for='senha' id="labelSenha">senha</label>
                         <i id= 'verSenha' class="fa fa-eye" aria-hidden="true"></i>
                     </div>
           
                     <div class='label-float'>
                         <input type='text' id='confirmarSenha' placeholder='' required>
-                        <label for='confirmarSenha'>Confirmar Senha</label>
+                        <label for='confirmarSenha' id="labelConfirmarSenha">Confirmar Senha</label>
                         <i id= 'verConfirmarSenha' class="fa fa-eye" aria-hidden="true"></i>
                     </div>
           
                         <div class="justify-center">
-                            <input type="submit" value="enviar">
+                            <input type="submit" value="Cadastrar" onclick="cadastrar()">
                         </div>
                       
                       <p>Já possui uma conta? Faça o
@@ -76,36 +81,130 @@
 </body>
 </html>
 
+  <script>
+var btn = document.querySelector('#verSenha');
+    /*minha variavel btn esta acessando o documento e através do querySelector eu vou procurar a minha class, logo em seguida adicionei minha class a minha variavel*/
+var btnConfirm = document.querySelector('#verConfirmarSenha');
 
-<script>
-    var btn = document.querySelector('#verSenha')
-    var btnConfirm = document.querySelector('#verConfirmarSenha')
-    /*minha variavel botao esta acessando o documento e através do querySelector eu vou procurar a minha class, logo em seguida adicionei minha class a minha variavel*/
-        
-        btn.addEventListener('click', ()=>{
-        let inputSenha = document.querySelector('#senha')
+var nome= document.querySelector('#nome');
+var labelNome= document.querySelector('#labelNome');
+
+var usuario= document.querySelector('#usuario');
+var labelUsuario= document.querySelector('#labelUsuario');
+
+var senha= document.querySelector('#senha');
+var labelSenha= document.querySelector('#labelSenha');
+
+var confirmarSenha= document.querySelector('#confirmarSenha');
+var labelConfirmarSenha= document.querySelector('#labelConfirmarSenha');
+
+var validNome = false;
+var validUsuario = false;
+var validSenha = false;
+var validConfirme = false;
+    // false = formulario nao preenchido
+
+var msgError = document.querySelector('#msgError')
+var msgSuccess = document.querySelector('#msgSuccess')
+
+// estou criando uma função e adicionando um evento keyup, ao digitar e tirar o dedo da tecla, ele começa a fazer o que estiver na minha eron function
+nome.addEventListener('keyup', () => {
+    if(nome.value.length <= 2){
+        labelNome.setAttribute('style', 'color: red')
+        labelNome.innerHTML = 'Nome *Insira no mínimo 3 caracteres'
+        nome.setAttribute('style', 'border-color: red')
+        validNome = false
+    }else{
+        labelNome.setAttribute('style', 'color: green')
+        labelNome.innerHTML = 'Nome'
+        nome.setAttribute('style', 'border-color: green')  
+        validNome = true
+    }
+})
+ 
+usuario.addEventListener('keyup', () => { 
+    if(usuario.value.length <= 4){
+        labelUsuario.setAttribute('style', 'color: red')
+        labelUsuario.innerHTML = 'Usuário *Insira no mínimo 5 caracteres'
+        usuario.setAttribute('style', 'border-color: red')
+        validUsuario = false
+    }else{
+        labelUsuario.setAttribute('style', 'color: green')
+        labelUsuario.innerHTML = 'Usuário'
+        usuario.setAttribute('style', 'border-color: green')
+        validUsuario = true
+    }
+})
+
+senha.addEventListener('keyup', () => { 
+    if(senha.value.length <= 7){
+        labelSenha.setAttribute('style', 'color: red')
+        labelSenha.innerHTML = 'Senha *Insira no mínimo 8 caracteres'
+        senha.setAttribute('style', 'border-color: red')
+        validSenha = false
+    }else{
+        labelSenha.setAttribute('style', 'color: green')
+        labelSenha.innerHTML = 'Senha'
+        senha.setAttribute('style', 'border-color: green')
+        validSenha = true
+    }
+})
+
+confirmarSenha.addEventListener('keyup', () => { 
+    if(senha.value != confirmarSenha.value){
+        labelConfirmarSenha.setAttribute('style', 'color: red')
+        labelConfirmarSenha.innerHTML = 'Confirmar Senha *As senhas não conferem'
+        confirmarSenha.setAttribute('style', 'border-color: red')
+        validConfirme = false
+    }else{
+        labelConfirmarSenha.setAttribute('style', 'color: green')
+        labelConfirmarSenha.innerHTML = 'Confirmar Senha'
+        confirmarSenha.setAttribute('style', 'border-color: green')
+        validConfirme = true
+    }
+})
+
+function cadastrar(){
+    if(validNome && validUsuario && validSenha && 
+    validConfirme){0
+        msgSuccess.setAttribute('style', 'display: block')
+        msgSuccess.innerHTML = `<strong>Cadastrando usuário...</strong>`
+        msgError.setAttribute('style', 'display: none')
+        msgError.innerHTML = ``
+
+        setTimeout(()=>{
+            window.location.href = 'file:///c%3A/Users/ASUS/OneDrive/Documentos/Projeto-Individual/login.html'
+        }, 3000)
+        // redirecionamento de tela com tempo de espera de 3s
+    } else {
+        msgError.setAttribute('style', 'display: block')
+        msgError.innerHTML = `<strong>Preencha todos os campos corretamente antes de cadastrar</strong>`
+        msgSuccess.setAttribute('style', 'display: none')
+        msgSuccess.innerHTML = ``
+    }
+}
+
+btn.addEventListener('click', ()=>{
+    let inputSenha = document.querySelector('#senha')
     
-            if(inputSenha.getAttribute('type') == 'password'){
-            inputSenha.setAttribute('type', 'text')
+    if(inputSenha.getAttribute('type') == 'password'){
+     inputSenha.setAttribute('type', 'text')
 
-            } else {
-            inputSenha.setAttribute('type', 'password')
-            }
-        })
+    } else {
+     inputSenha.setAttribute('type', 'password')
+    }
 
-        /*inserir um evento que logo em seguida acontecerá algo */
-
-        btnConfirm.addEventListener('click', ()=>{
-        let inputConfirmSenha = document.querySelector('#confirmarSenha')
+})
+    /*inserir um evento que logo em seguida acontecerá algo */
+btnConfirm.addEventListener('click', ()=>{
+    let inputConfirmSenha = document.querySelector('#confirmarSenha')
     
-            if(inputConfirmSenha.getAttribute('type') == 'password'){
-            inputConfirmSenha.setAttribute('type', 'text')
-            } else {
-                inputConfirmSenha.setAttribute('type', 'password')
-            }
-        })
-    
-    </script>
+    if(inputConfirmSenha.getAttribute('type') == 'password'){
+     inputConfirmSenha.setAttribute('type', 'text')
 
-  
-  
+    } else {
+     inputConfirmSenha.setAttribute('type', 'password')
+    }
+})
+
+</script>

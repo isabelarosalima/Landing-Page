@@ -105,6 +105,7 @@ li{
 .banner .banner-text h1{
  font-size: 94px;
  color: whitesmoke;
+ text-shadow: 2px 2px 3px black;
 }
 .banner .banner-text p{
     font-size: 20px;
