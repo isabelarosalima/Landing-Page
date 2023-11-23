@@ -1,0 +1,34 @@
+@media screen and (max-width: 760px){
+    header{
+        flex-direction: column;
+    }
+
+    main{
+        flex-direction: column;
+    }
+
+    h2{
+        font-size: 38px;
+        margin-left: 13px;
+    }
+
+    form{
+        margin: 0 auto;
+        width: 100%;
+        margin-left: 13px;
+    }
+
+    input{
+        align-self: center;
+    }
+
+    img{
+        display: none;
+    }
+
+    ul{
+        text-align: center;
+    }
+}
+
+/* quando o meu site chegar na largura de 760px ele irá aplicar a minha estilização */
