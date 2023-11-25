@@ -82,7 +82,7 @@ li{
 #login-link:hover{
     color: whitesmoke ;
     background-color: #1d2951;
-    transition: all .4s ease-out;
+    border: 2px solid #1d2951;
 }
 
 #tittle{
@@ -91,16 +91,41 @@ li{
     font-weight: 200;
     line-height: 30px;
 }
-
 #tittle h1{
     font-weight: 200;
 }
 
-.btns{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding-top: 30px;
+.btnContato{
+    border: 2px solid #1d2951;
+    background-color: #1d2951;
+    padding: 9px;
+    border-radius: 12px;
+    color: whitesmoke;
+    margin: 20px;
+}
+
+.btnContato:hover{
+    transition: all 3.s ease-out;
+    color: whitesmoke;
+    border: 2px solid #152045;
+    background-color: #152045;
+}
+
+.botaoSite{
+    border: 2px solid #0b132f;
+    background-color: #0b132f
+    ;
+    padding: 12px;
+    border-radius: 12px;
+    color: whitesmoke;
+    margin: 20px;
+}
+
+.botaoSite:hover{
+    border: 2px solid #080f29;
+    background-color: #080f29;
+    color: whitesmoke;
+
 }
 
 .banner{
@@ -127,101 +152,9 @@ li{
     font-size: 20px;
     color: whitesmoke ;
     font-weight: lighter;
-    margin-bottom: 30px;
+    margin-bottom: 25px;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-}
-
-.paginaSaiba{
-    color: azure;
-}
-
-.paginaSaiba:hover{
-    color: #1d2951;
-    font-weight: bold;
-    transition: all .4s ease-out;
+  
 }
 
 /* estlizando meu conteúdo da página--------------------------------------------------------------------------- */
-.resenhas{
-    display: flex;
-    align-items: center;
-    background-color: #182346; 
-}
-
-.resenhas .resenhas-texto{
-    width: 50%;
-    padding: 90px;
-}
-
-.resenhas .resenhas-texto h3{
-    font-size: 56px;
-}
-
-.resenhas .resenhas-texto p{
-    margin: 5px 0 20px 0;
-}
-
-.resenhas .resenhas-img{
-    width: 50%;
-    padding: 90px;
-}
-
-.resenhas .resenhas-img img{
-width: 100%;
-}
-
-.SobreResenhas{
-    display: flex;
-    align-items: center;
-    background-color: #182346; 
-}
-
-.SobreResenhas .cards{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    height: 100vh;
-    margin: 30px;  
-    text-align: center;  
-    padding: 75px;
-}
-
-.SobreResenhas .cards h3{
-    margin-bottom: 30px;
-    font-size: 20px;
-    font-weight: lighter;
-    color: #c8c5c5;
-}
-
-.SobreResenhas .cards p{
-    margin-bottom: 15px;
-    font-size: 35px;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    font-weight: 350px;
-    padding: 45px;
-    color: #ffffff;
-    line-height: 1.2;
-    letter-spacing: 1.5px; 
-}
-
-span {
-color: #cc5500;
-font-weight: bold;
-}
-
-.botaoSite{
-    border: 2px solid #0b132f;
-    background-color: #0b132f;
-    padding: 12px;
-    border-radius: 12px;
-    color: whitesmoke;
-    margin: 15px;
-    font-size: 18px;
-}
-
-.botaoSite:hover{
-    border: 2px solid #9e4200;
-    background-color: #9e4200;
-    color: #c8c5c5;
-    transition: all .4s ease-out;
-}
