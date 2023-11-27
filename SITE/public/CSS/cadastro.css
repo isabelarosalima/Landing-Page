@@ -13,7 +13,7 @@ body{
     max-width: 1200px;
     margin: 0 auto;
     padding: 15;
-    background-color: #000000eb;
+    background-color: #0b132f;
     
 }
 
@@ -45,13 +45,14 @@ main{
 }
 
 h2{
-    font-size: 56px;
+    font-size: 50px;
     line-height: 10px;
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+
 }
 
 span{
-    color: #91310c;
+    color: #9e4200;
 }
 
 p{
@@ -65,12 +66,13 @@ img{
 }
 
 .card {
-    background-color: #e5dada;
+    background-color: #d1caca;
     padding: 30px; /* aumentar o card */
     border-radius: 4%;
     box-shadow:3px 3px 1px 0px #00000080 ;  
     /* sombras */
     width: 400px; 
+    margin-right: 20px;
 }
 
 .label-float input{
@@ -99,7 +101,7 @@ img{
 }
 
 .label-float input:focus{
-    border-bottom: 2px solid #91310c;
+    border-bottom: 2px solid #00000080;
 }
 
 .label-float label{
@@ -117,7 +119,7 @@ img{
 .label-float input:valid + label{
     font-size: 13px;
     margin-top: 0;
-    color: #91310c;
+    color: #00000080;
 }
 
 .justify-center{
@@ -139,8 +141,10 @@ form [type ='submit']{
 }
 
 form [type ='submit']:hover{
+    background-color: #1d2951;
+    border-color: #1d2951;
     cursor: pointer;
-    color: wheat;
+    color: whitesmoke;
     transition: all .5s ease-out;
 }
 
@@ -160,9 +164,11 @@ hr{
 
 p{
     color: #000000eb;
-    font-size: 14pt;
-    text-align: center;
+    font-size: 22px;
+    text-align: justify;
     font-weight: 200;
+    line-height: 1.2;
+   
 }
 
 .linkLogin{
@@ -173,33 +179,33 @@ p{
 }
 
 #login-link{
-    border: 2px solid #91310c;
+    border: 2px solid #9e4200;
     padding: 10px;
     border-radius: 15px;
-    color: whitesmoke;
+    color: #c8c5c5;
 }
 
 #login-link:hover{
-    background-color: #91310c;
-    color:  wheat;
+    background-color: #9e4200;
+    color:  whitesmoke;
 }
 
 a:hover {
     color: 91310c ;
     transition: all .3s ease-out;
     font-weight: bold;
-    color: wheat;
+    color: whitesmoke;
 }
 
 a{
-    color:  whitesmoke;
+    color:  #c8c5c5;
     text-decoration: none;
 }
 
 .tituloCard{
     text-align: center;
     margin-bottom: 20px; /* aqui se cria uma margem no meu h1 para separar-lo dos demais itens */
-    color:#91310c;
+    color:#9e4200;
 
 
 }
@@ -211,7 +217,7 @@ h1{
 
 #msgError{
     text-align: center;
-    color: #ff0000;
+    color: #a40b0b;
     background-color: #ffbbbb;
     padding: 10px;
     border-radius: 4px;
@@ -220,7 +226,7 @@ h1{
 
 #msgSuccess{
     text-align: center;
-    color: #00bb00;
+    color: #067a06;
     background-color: #bbffbe;
     padding: 10px;
     border-radius: 4px;

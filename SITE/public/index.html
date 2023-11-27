@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./CSS/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <title>Literacia Conectada</title>
 </head>
 <body>
@@ -20,7 +21,6 @@
                 <ul class="linkLogin">
                     <li><a href="index.html">Início</a></li>
                     <li><a href="sobre.html">Sobre</a></li>
-                    <li><a href="contato.html">Contato</a></li>
                     <li><a href="eventos.html">Eventos</a></li>
                     <li><a href="cadastro.html">Cadastro</a></li>
                     <li><a href="login.html" id="login-link">Já tem uma conta?</a></li>
@@ -39,15 +39,14 @@
 
 <section class="SobreResenhas">
     <div class="cards">
-     <h3>SOBRE NÓS</h3>
-     <p> A Literacia Conectada entrega um ambiente dedicado à <span> educação</span>, à <span>cultura</span> e ao <span>desenvolvimento</span> pessoal. Participe do 'Clube do Livro', onde eventos literários, e-books e materiais de estudos gratuitos convergem para formar uma comunidade engajada em crescimento constante! Explore novos horizontes com nossas resenhas e desperte seu potencial com nosso QUIZ e aproveite para criar uma lista de leitura mensal. <br>Faça parte dessa família!
-     </p> 
+        <h3>SOBRE NÓS</h3>
+        <p> A Literacia Conectada entrega um ambiente dedicado à <span> educação</span>, à <span>cultura</span> e ao <span>desenvolvimento</span> pessoal. Participe do 'Clube do Livro', onde eventos literários, e-books e materiais de estudos gratuitos convergem para formar uma comunidade engajada em crescimento constante! Explore novos horizontes com nossas resenhas e desperte seu potencial com nosso QUIZ e aproveite para criar uma lista de leitura mensal. <br>Faça parte dessa família!
+        </p> 
 
-
-    <div class="btns">
-     <a href="sobre.html" class="botaoSite">Clique para saber mais</a>
-     <a href="cadastro.html" class="botaoSite">Torne-se membro</a>
-    </div> 
+        <div class="btns">
+            <a href="sobre.html" class="botaoSite">Clique para saber mais</a>
+            <a href="cadastro.html" class="botaoSite">Torne-se membro</a>
+        </div> 
 
     </div>
 </section>
@@ -56,80 +55,86 @@
     <div class="container">
         <h3>RESENHAS</h3>
         <p>As resenhas a seguir são dos livros que serão abordados em eventos futuros. <br> Não esqueça de <span>VOTAR</span> no titulo que mais te interessa para ser o ganhador. <br>
-        Clique <a href="servicos.html" class="linkAqui">aqui</a> para ser guiado para a seção de eventos e fique por dentro de tudo! </p> 
+        Clique <a href="servicos.html" class="linkAqui">aqui</a> para ser guiado para a seção de eventos e fique por dentro de tudo! 
+        </p> 
         <div class="cardsResenhas">
             <!-- card 1 -->
             <div class="card-item">
                 <img src="./IMG/mulherxinhas.png" alt="Nome ">
-                <p class="nome-User">Mulherzinhas</p>
+                <p class="nome-User">MULHERZINHAS</p>
                 <p class="resenha-livro">
-                    As resenhas a seguir são dos livros que serão abordados em eventos futuros 
+                    As quatro irmãs vivem a sua infância e adolescência, no período em que o seu pai vai para a guerra. Enquanto o Sr. March está fora elas ficam ao cuidado da sua mãe e da empregada Ana, destacando as dificuldades financeiras e emocionais que as irmãs March enfrentam.
                 </p>
-                <a href="sobre.html" class="botaoCard">Ler resenha completa </a>
+                <a href="mulherzinhas.html" class="botaoCard">Ler resenha completa </a>
                 
             </div>
             <!-- end card item 1 -->
             <!-- card 2 -->
             <div class="card-item">
                 <img src="./IMG/jogos-vorazes-suzanne-collins.jpg" alt="Nome ">
-                <p class="nome-User">Jogos Vorazes</p>
+                <p class="nome-User">JOGOS VORAZES</p>
                 <p class="resenha-livro">
-                As resenhas a seguir são dos livros que serão abordados em eventos futuros. 
+                    O primeiro Livro da série de Suzanne Collins, conta a história sofrida do povo de Penem, que como castigo da revolução, eram obrigados a enviar para capital uma garota e um garoto de 12 e 18 anos de cada um dos 12 Distritos, para lutarem até a morte em uma arena. 
                 </p>
-                <a href="sobre.html" class="botaoCard">Ler resenha completa </a>
+                <a href="vorazes.html" class="botaoCard">Ler resenha completa </a>
             </div>
             <!-- end card item 2 -->
             <!-- card 3 -->
             <div class="card-item">
                 <img src="./IMG/miseraveis.jpeg" alt="NEUGIERHIme ">
-                <p class="nome-User">Os miseraveis</p>
+                <p class="nome-User">OS MISERÁVEIS</p>
                 <p class="resenha-livro">
-                    As resenhas a seguir são dos livros que serão abordados em eventos futuros 
+                    Sendo um dos livros considerados uma obra-prima da literatura, ele denuncia as injustiças e as misérias humanas, narrando a trajetória de Jean Valjean, um ex-presidiário que busca redimir seus erros e ajudar os mais pobres na França do século XIX.
                 </p>
-                <a href="sobre.html" class="botaoCard">Ler resenha completa</a> 
+                <a href="miseraveis.html" class="botaoCard">Ler resenha completa</a> 
             </div>
             <!-- end card item 3 -->
         </di+v>
     </div>
 </section>
 
+
+<div class="texto">
+    <h1>ENQUETE DE VOTAÇÃO</h1>
+    <p>Vote no livro que realmente mexeu com você para ser o destaque no próximo evento literário. <br>Participe da decisão e faça parte desse evento que celebra a diversidade de narrativas. <br> <span>Faça sua escolha!</span>  </p>
+</div>
+
 <section class="votacao">
     <div class="conteiner3">
-            <h1>ENQUETE DE VOTAÇÃO</h1>
-            <p>Vote no livro que realmente mexeu com você para ser o destaque no próximo evento literário. <br>Participe da decisão e faça parte desse evento que celebra a diversidade de narrativas. <br> <span>Faça sua escolha!</span>  </p>
             <form id="pollForm">
                 <div class="enquete" style="background-image: url(./IMG/LIVROS.png);">
                     <h2 class="tituloCard"> vote no livro de sua preferência </h2>
                 
                       <div class='form'>
                           <input type='radio' name="pollOption" id='opcao1' value="opção 1">
-                          <label for='opcao1'>opcao1</label>
+                          <label for='opcao1'>Mulherzinhas</label>
                       </div>
                     
                       <div class='form'>
                           <input type='radio' name="pollOption" id='opcao2' value="opção 2">
-                          <label for='opcao2'>opcao2</label>
+                          <label for='opcao2'>Jogos Vorazes</label>
                       </div>
     
                       <div class='form'>
                         <input type='radio' name="pollOption" id='opcao3' value="opção 3">
-                        <label for='opcao3'>opcao3</label>
+                        <label for='opcao3'>Os miseráveis</label>
                     </div>
                     
                     <div class="botaoJustifique">
                         <button type="button" onclick="vote()" class="botaoEnquete">Votar</button>
                     </div>
+
                     <div id="result"></div>
 
-                    </div>
+                </div>
             </form>
        
-    
-        <div class="dashborad">
-    
-    
-    
-        </div>
+            <div class="dashborad">
+                <canvas id="myChart">
+
+
+                </canvas>
+            </div>
     </div>
 </section>
 
@@ -147,5 +152,53 @@ function vote() {
         alert('Por favor, selecione uma opção antes de votar.');
     }
 }
+
+const ctx = document.getElementById('myChart');
+
+new Chart(ctx, {
+    type: 'bar',
+    data: {
+        labels: ['Mulherzinhas', 'Jogos Vorazes', 'Os miseráveis'],
+        datasets: [{
+            label: 'RANKING',
+            backgroundColor: ['#FF4500',   '#FF8C00',
+            '#FFD700'] ,  
+            borderColor: ['#FF4500','#FF8C00',
+            '#FFD700'],      
+            data: [45, 98, 68],   
+            borderWidth: 1              
+        }]
+    },
+    options: {
+        indexAxis: 'y',
+        plugins: {
+            legend: {
+                labels: {
+                    color: '#CFDEF1'
+                }
+            }
+        },
+        scales: {
+            x: {
+                grid: {
+                    color: '#44595B'
+                },
+                ticks: {
+                    color: '#CFDEF1'
+                }
+                
+            },
+            y: {
+                beginAtZero: true,
+                grid: {
+                    color: '#44595B'
+                },
+                ticks: {
+                    color: '#CFDEF1'
+                }
+            }
+        }
+    }
+});
 
 </script>

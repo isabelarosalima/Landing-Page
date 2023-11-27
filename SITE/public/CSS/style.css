@@ -263,8 +263,7 @@ font-weight: bold;
 
 .resenhas .card-item .resenha-livro{
   font-size: 15px;
-  padding: 0 15px;
-  margin-bottom: 120px;
+  padding: 0 7px;
   transition: all .3s ease-out;
 }
 
@@ -291,24 +290,14 @@ font-weight: bold;
 
 /* estlizando votacao */
 
-.conteiner3{
+
+.texto{
     background-color: #1d2951;
     display: block;
-    align-items: center;
-}
-
-.conteiner3 .pollForm{
-    width: 50%;
-    padding: 90px;
-}
-
-.conteiner3 .dashborad{
-    width: 50%;
-    padding: 90px;
 
 }
 
-.conteiner3 h1{
+.texto h1{
     text-align: center;
     padding-top: 50px;
     font-weight: 250px;
@@ -316,7 +305,8 @@ font-weight: bold;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
-.conteiner3 p{
+
+.texto p{
     padding: 30px;
     text-align: center;
     font-size: 23PX;
@@ -325,24 +315,42 @@ font-weight: bold;
 }
 
 
+.conteiner3{
+    background-color: #1d2951;
+    display: flex;
+    justify-content: space-between;
+
+    
+}
+
+.conteiner3 .enquete{
+    width: 430px;
+    margin-top: 45px;
+    background-color: rgb(74, 88, 135);
+    padding: 30px; /* aumentar o card */
+    border-radius: 4%;
+    box-shadow:3px 3px 1px 0px #00000080 ;  
+    /* sombras */ 
+    margin-right: 150px;
+    margin-left: 150px;
+   
+}
+
+.conteiner3 .dashborad{
+    height: 800px;
+    width: 500px;
+    margin-right: 120px;
+    margin-top: 80px;
+}
+
+
+
 .enquete .tituloCard{
     margin-left: 70px;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 
 }
 
-.enquete {
-    background-color: #485787;
-    padding: 30px; /* aumentar o card */
-    border-radius: 4%;
-    box-shadow:3px 3px 1px 0px #00000080 ;  
-    /* sombras */
-    width: 400px; 
-    margin-right: 150px;
-    margin-left: 150px;
-    margin-top: 50px;
-
-}
 
 .enquete input{
  margin: 5px;
@@ -386,3 +394,4 @@ font-weight: bold;
     color: wheat;
 
 }
+
