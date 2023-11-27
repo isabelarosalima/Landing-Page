@@ -60,7 +60,7 @@
 
                     <div class='label-float'>
                         <input type='email' id='confirmarEmail' placeholder='' required>
-                        <label for='confirmarEmail' id="labelConfirmarEmail">Usuário</label>
+                        <label for='confirmarEmail' id="labelConfirmarEmail">Confirmar e-mail</label>
                     </div>
                     
                     <div class='label-float'>
@@ -183,9 +183,9 @@ confirmarSenha.addEventListener('keyup', () => {
 })
 
 email.addEventListener('keyup', () => { 
-    if(email.value){
+    if(email.value.endsWith(`.com`) == false){
         labelEmail.setAttribute('style', 'color: red')
-        labelEmail.innerHTML = 'E-mail *'
+        labelEmail.innerHTML = 'E-mail *incorreto'
         email.setAttribute('style', 'border-color: red')
         validEmail = false
     }else{

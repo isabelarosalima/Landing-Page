@@ -100,7 +100,7 @@ li{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding-top: 30px;
+    padding-top: 5px;
 }
 
 .banner{
@@ -142,33 +142,7 @@ li{
 }
 
 /* estlizando meu conteúdo da página--------------------------------------------------------------------------- */
-.resenhas{
-    display: flex;
-    align-items: center;
-    background-color: #182346; 
-}
 
-.resenhas .resenhas-texto{
-    width: 50%;
-    padding: 90px;
-}
-
-.resenhas .resenhas-texto h3{
-    font-size: 56px;
-}
-
-.resenhas .resenhas-texto p{
-    margin: 5px 0 20px 0;
-}
-
-.resenhas .resenhas-img{
-    width: 50%;
-    padding: 90px;
-}
-
-.resenhas .resenhas-img img{
-width: 100%;
-}
 
 .SobreResenhas{
     display: flex;
@@ -180,10 +154,10 @@ width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 100vh;
-    margin: 30px;  
+    height: 112vh;
+    margin: 15px;  
     text-align: center;  
-    padding: 75px;
+    padding: 80px;
 }
 
 .SobreResenhas .cards h3{
@@ -224,4 +198,191 @@ font-weight: bold;
     background-color: #9e4200;
     color: #c8c5c5;
     transition: all .4s ease-out;
+}
+
+/* CARDS */
+.resenhas{
+    background-color: #0b132f;
+    height: 112vh;
+}
+
+.resenhas h3{
+    text-align: center;
+    padding: 50px;
+    font-weight: 250px;
+}
+
+.resenhas p{
+    text-align: center;
+    margin-bottom: 30px;
+    color: #c8c5c5;
+    font-size: 20px;
+}
+
+.cardsResenhas{
+    display: flex;
+    justify-content: center;
+}
+
+.resenhas .card-item{
+    background-color: #1d2951;
+    text-align: center;
+    border-radius: 14px;  
+    margin: 15px;
+    width: 350px;
+    height: 400px;
+    transition: all .4s ease-out;
+}
+
+.resenhas .card-item img{
+    border-radius: 50%;
+    width: 130px;
+    height: 130px;
+    display: block;
+    margin: 15px auto;
+    
+}
+
+
+.linkAqui{
+    color: #ffffff;
+}
+
+.linkAqui:hover{
+    color: #9e4200;
+    transition: all .2s ease-out;
+}
+
+.resenhas .card-item .nome-User{
+    font-weight: 600;
+    font-size: 20px;
+    margin-bottom: 15px;
+    transition: all .3s ease-out;
+
+}
+
+.resenhas .card-item .resenha-livro{
+  font-size: 15px;
+  padding: 0 15px;
+  margin-bottom: 120px;
+  transition: all .3s ease-out;
+}
+
+
+.resenhas .card-item:hover{
+    background-color: #637abe90;
+    margin-top: -5px;
+}
+  
+.resenhas .card-item:hover .nome-User{
+   color: #080d1e;
+}
+  
+
+.botaoCard:hover{
+    color: #080d1e;
+    font-weight: bold;
+    transition: all .4s ease-out;
+}
+
+.botaoCard{
+    color: #ffffff;
+}
+
+/* estlizando votacao */
+
+.conteiner3{
+    background-color: #1d2951;
+    display: block;
+    align-items: center;
+}
+
+.conteiner3 .pollForm{
+    width: 50%;
+    padding: 90px;
+}
+
+.conteiner3 .dashborad{
+    width: 50%;
+    padding: 90px;
+
+}
+
+.conteiner3 h1{
+    text-align: center;
+    padding-top: 50px;
+    font-weight: 250px;
+    font-size: 50px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.conteiner3 p{
+    padding: 30px;
+    text-align: center;
+    font-size: 23PX;
+    color: #c8c5c5;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+
+.enquete .tituloCard{
+    margin-left: 70px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+
+}
+
+.enquete {
+    background-color: #485787;
+    padding: 30px; /* aumentar o card */
+    border-radius: 4%;
+    box-shadow:3px 3px 1px 0px #00000080 ;  
+    /* sombras */
+    width: 400px; 
+    margin-right: 150px;
+    margin-left: 150px;
+    margin-top: 50px;
+
+}
+
+.enquete input{
+ margin: 5px;
+ font-weight: bold;
+}
+
+.form {
+    margin-top: 13px;
+    margin-bottom: 5%;
+    padding-top: 5%;
+    /* ambas controlam o posicionamento e o espaçamento dos elementos
+    margin-top = margem superior
+    margin-bottom =margem inferior
+    padding-top = espaço interno entre o conteúdo e a borda */
+}
+
+
+.botaoJustifique{
+    display: flex;
+    justify-content: center;
+}
+
+.enquete .botaoEnquete{
+    height: 50px;
+    width: 50%;
+    background-color: #0b132f;
+    border-color: #0b132f;
+    color: whitesmoke;
+    font-weight: bold; 
+    font-size: 13pt;  
+    margin-top: 15px;
+    border-radius: 10px;
+    outline: none;
+    transition: all .5s ease-out;
+}
+
+.enquete .botaoEnquete:hover{
+    background-color: #9e4200;
+    border-color: #9e4200;
+    cursor: pointer;
+    color: wheat;
+
 }

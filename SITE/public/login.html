@@ -37,13 +37,13 @@
         </aside>
     
         <article>
-            <form>
+            <form id="loginForm" onsubmit="return botaoEntrar()">
                 <div class='card'>
                     <h1 class="tituloCard"> Entrar </h1>
                 
                       <div class='label-float'>
-                          <input type='text' id='usuario' placeholder='' required>
-                          <label for='usuario'>Usuário</label>
+                          <input type='text' id='email' placeholder='' required>
+                          <label for='email'>E-mail</label>
                       </div>
                     
                       <div class='label-float'>
@@ -53,7 +53,7 @@
                       </div>
           
                       <div class="justify-center">
-                        <input type="submit" value="enviar">
+                        <input onclick="botaoEntrar()" type="submit" value="enviar">
                     </div>
           
                       <div class="justify-center">
@@ -62,7 +62,8 @@
           
                       <p>Não tem uma conta?
                           <a href="cadastro.html" style="color: black;">Cadastre-se</a>
-                      </p>      
+                      </p> 
+                    </div>     
             </form>
         </article>
     </main>
@@ -74,17 +75,74 @@
     var btn = document.querySelector('#verSenhaLogin')
     /*minha variavel botao esta acessando o documento e através do querySelector eu vou procurar a minha class, logo em seguida adicionei minha class a minha variavel*/
     
-            btn.addEventListener('click', ()=>{
-            let inputSenha = document.querySelector('#senha')
+        btn.addEventListener('click', ()=>{
+        let inputSenha = document.querySelector('#senha')
         
-                if(inputSenha.getAttribute('type') == 'password'){
-                inputSenha.setAttribute('type', 'text')
+            if(inputSenha.getAttribute('type') == 'password'){
+            inputSenha.setAttribute('type', 'text')
     
-                } else {
-                inputSenha.setAttribute('type', 'password')
-                }
-            })
-    
+            } else {
+            inputSenha.setAttribute('type', 'password')
+            }
+        })
         /*inserir um evento que logo em seguida acontecerá algo */
+
+function botaoEntrar() {
+    //estou obtendo os valores dos campos email e senha do formulário
+    var email = document.getElementById('email').value;
+    var senha = document.getElementById('senha').value;
+
+    //verificação para confirmar se os campos estão preenchidos
+    if (email == "" || senha == "") {
+        alert("Preencha todos os campos!");
+    } else {
+        //solicitação de autenticação usando fetch
+        fetch("/usuarios/autenticar", { 
+            //comando fetch = API que realiza solicitações HTTP assíncronas, é usado para buscar recursos de outra rede
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            //enviando dados como JSON
+            body: JSON.stringify({
+                emailServer: email,
+                senhaServer: senha
+            })
+        })
+        .then(function (resposta) {
+            //tratamento de resposta
+            if (resposta.ok) {
+                //conventendo a responsta em JSON
+                resposta.json().then(json => {
+                    console.log(json);
+
+                    //armazenando dados
+                     sessionStorage.EMAIL_USUARIO = json.email;
+                     sessionStorage.SENHA_USUARIO = json.senha;
+                    
+                    //redirecionamento
+                    setTimeout(function () {
+                        window.location = "file:///c%3A/Users/ASUS/OneDrive/%C3%81rea%20de%20Trabalho/Landing-Page/SITE/public/login.html";
+                    }, 500);
+                });
+            } else { //alerta de erro
+                alert("Os dados inseridos não foram encontrados");
+                console.log("Houve um erro ao tentar realizar o login!");
+            }
+        }).catch(function (erro) {
+            //capiturando erros
+            console.log(erro);
+        });
+        //impede o ebio do formulário
+        return false;
+    }
+}
+ //DIFERENÇA DE GETELEMENTBYID E QUERYSELECTOR = p byId é específico para a obtenção de um elemento com base em seu ID. É geralmente mais rápido do que querySelector quando você está apenas procurando por um ID específico, porque a pesquisa é otimizada para identificadores exclusivos.
     
+
+
+
+
+
+
     </script>
