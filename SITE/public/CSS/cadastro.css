@@ -10,10 +10,10 @@ body{
     background-attachment: fixed;
     /* background-attachment é para fixar e cobrir toda a tela */
     color: whitesmoke;
-    max-width: 1200px;
+    max-width: 1250px;
     margin: 0 auto;
     padding: 15;
-    background-color: #0b132f;
+    background-color: #2a3356;
     
 }
 
@@ -52,7 +52,7 @@ h2{
 }
 
 span{
-    color: #9e4200;
+    color: #ba5107;
 }
 
 p{
@@ -72,7 +72,8 @@ img{
     box-shadow:3px 3px 1px 0px #00000080 ;  
     /* sombras */
     width: 400px; 
-    margin-right: 20px;
+    margin-right: 50px;
+
 }
 
 .label-float input{
@@ -130,8 +131,8 @@ img{
 form [type ='submit']{
     height: 50px;
     width: 50%;
-    background-color: #91310c;
-    border-color: #91310c;
+    background-color: #ba5107;
+    border-color: #ba5107;
     color: whitesmoke;
     font-weight: bold; 
     font-size: 13pt;  
@@ -179,14 +180,14 @@ p{
 }
 
 #login-link{
-    border: 2px solid #9e4200;
+    border: 2px solid #ba5107;
     padding: 10px;
     border-radius: 15px;
     color: #c8c5c5;
 }
 
 #login-link:hover{
-    background-color: #9e4200;
+    background-color: #ba5107;
     color:  whitesmoke;
 }
 

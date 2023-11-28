@@ -63,7 +63,7 @@ nav ul a{
 }
 
 nav ul a:hover {
-    color: #1d2951 ;
+    color: #ea721c ;
     font-weight: bold;
     transition: all .3s ease-out;
 }
@@ -74,14 +74,14 @@ li{
 }
 
 #login-link{
-    border: 2px solid #1d2951;
+    border: 2px solid #ea721c;
     padding: 10px;
     border-radius: 12px;
 }
 
 #login-link:hover{
     color: whitesmoke ;
-    background-color: #1d2951;
+    background-color: #ea721c;
     transition: all .4s ease-out;
 }
 
@@ -407,7 +407,7 @@ font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: #25315c;
+    background-color: #2d3966;
    height: 500px;
 
 }
@@ -462,7 +462,7 @@ margin-top: 65px;
 /* 
  arrumando valores */
  .valores {
-    background-color: #52639a;
+    background-color: #4d5b88;
     height: 550px;
 }
 
@@ -496,7 +496,7 @@ margin-top: 65px;
 }
 
 .valores .unidadeCard img{
-    background-color: #7c8dc5;
+    background-color: #a0acd3;
     border-radius: 14px;
     width: 70px;
     padding: 9px;
@@ -516,7 +516,7 @@ margin-top: 65px;
 } 
 
 .valores .unidadeCard:hover{
-    background-color: #7c8dc5;
+    background-color: #a0acd3;
     transition: 0.3;
 }
 
@@ -529,3 +529,91 @@ margin-top: 65px;
    transition: 0.3s;
   
 }
+
+/* 
+ arrumando valores */
+ .valores2 {
+    background-color: #677398;
+    height: 2900px;
+}
+
+.valores2 h3{
+    text-align: center;
+    padding-top: 72px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 70px;
+    font-weight: bold;
+    
+}
+
+.valores2 .valoresEu > p{
+    text-align: center;
+    color: #c8c5c5;
+    font-size: 19px;
+}
+
+.valores2 .cardEu{
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    
+}
+
+.valores2 .unidadeCard-eu{
+ background-color: rgb(42, 55, 99);
+ width: 1000px;
+ height: 550px;
+ padding: 20px;
+ border-radius: 14px;
+ margin: 15px;
+ 
+}
+
+.valores2 .unidadeCard-eu img{
+  margin-left: 370px;
+    width: 210px;
+    height: 210px;
+    border-radius: 100px;
+    
+   }
+
+.unidadeCard-eu{
+    margin-left: 300px;
+}
+   
+
+
+.valores2 .unidadeCard-eu p
+{
+   color: #eeebeb;
+   margin-left: 15px;
+   margin-right: 15px;
+   padding: 20px;
+   font-size: 16px;
+   font-weight: 500;
+  
+   
+} 
+
+.valores2 .unidadeCard-eu span
+{
+   margin-left: 400px;
+   font-size: 22px;
+   
+} 
+
+.valores2 .unidadeCard-eu:hover{
+  
+    transition: 0.3;
+}
+
+.valores2 .unidadeCard-eu p.nome-eu{
+  margin: 5px 0;
+  transition: 0.3s;
+}
+
+.valores2 .unidadeCard-eu p.descricao{
+   transition: 0.3s;
+  
+}
+
