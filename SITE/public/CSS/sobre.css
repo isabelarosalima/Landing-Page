@@ -82,7 +82,7 @@ li{
 #login-link:hover{
     color: whitesmoke ;
     background-color: #1d2951;
-    border: 2px solid #1d2951;
+    transition: all .4s ease-out;
 }
 
 #tittle{
@@ -91,41 +91,16 @@ li{
     font-weight: 200;
     line-height: 30px;
 }
+
 #tittle h1{
     font-weight: 200;
 }
 
-.btnContato{
-    border: 2px solid #1d2951;
-    background-color: #1d2951;
-    padding: 9px;
-    border-radius: 12px;
-    color: whitesmoke;
-    margin: 20px;
-}
-
-.btnContato:hover{
-    transition: all 3.s ease-out;
-    color: whitesmoke;
-    border: 2px solid #152045;
-    background-color: #152045;
-}
-
-.botaoSite{
-    border: 2px solid #0b132f;
-    background-color: #0b132f
-    ;
-    padding: 12px;
-    border-radius: 12px;
-    color: whitesmoke;
-    margin: 20px;
-}
-
-.botaoSite:hover{
-    border: 2px solid #080f29;
-    background-color: #080f29;
-    color: whitesmoke;
-
+.btns{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 5px;
 }
 
 .banner{
@@ -152,9 +127,405 @@ li{
     font-size: 20px;
     color: whitesmoke ;
     font-weight: lighter;
-    margin-bottom: 25px;
+    margin-bottom: 30px;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-  
+}
+
+.paginaSaiba{
+    color: azure;
+}
+
+.paginaSaiba:hover{
+    color: #1d2951;
+    font-weight: bold;
+    transition: all .4s ease-out;
 }
 
 /* estlizando meu conteúdo da página--------------------------------------------------------------------------- */
+
+
+.SobreResenhas{
+    display: flex;
+    align-items: center;
+    background-color: #182346; 
+}
+
+.SobreResenhas .cards{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 112vh;
+    margin: 15px;  
+    text-align: center;  
+    padding: 80px;
+}
+
+.SobreResenhas .cards h3{
+    margin-bottom: 30px;
+    font-size: 20px;
+    font-weight: lighter;
+    color: #c8c5c5;
+}
+
+.SobreResenhas .cards p{
+    margin-bottom: 15px;
+    font-size: 35px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-weight: 350px;
+    padding: 45px;
+    color: #ffffff;
+    line-height: 1.2;
+    letter-spacing: 1.5px; 
+}
+
+span {
+color: #cc5500;
+font-weight: bold;
+}
+
+.botaoSite{
+    border: 2px solid #0b132f;
+    background-color: #0b132f;
+    padding: 12px;
+    border-radius: 12px;
+    color: whitesmoke;
+    margin: 15px;
+    font-size: 18px;
+}
+
+.botaoSite:hover{
+    border: 2px solid #9e4200;
+    background-color: #9e4200;
+    color: #c8c5c5;
+    transition: all .4s ease-out;
+}
+
+/* CARDS */
+.resenhas{
+    background-color: #0b132f;
+    height: 112vh;
+}
+
+.resenhas h3{
+    text-align: center;
+    padding: 50px;
+    font-weight: 250px;
+}
+
+.resenhas p{
+    text-align: center;
+    margin-bottom: 30px;
+    color: #c8c5c5;
+    font-size: 20px;
+}
+
+.cardsResenhas{
+    display: flex;
+    justify-content: center;
+}
+
+.resenhas .card-item{
+    background-color: #1d2951;
+    text-align: center;
+    border-radius: 14px;  
+    margin: 15px;
+    width: 350px;
+    height: 400px;
+    transition: all .4s ease-out;
+}
+
+.resenhas .card-item img{
+    border-radius: 50%;
+    width: 130px;
+    height: 130px;
+    display: block;
+    margin: 15px auto;
+    
+}
+
+
+.linkAqui{
+    color: #ffffff;
+}
+
+.linkAqui:hover{
+    color: #9e4200;
+    transition: all .2s ease-out;
+}
+
+.resenhas .card-item .nome-User{
+    font-weight: 600;
+    font-size: 20px;
+    margin-bottom: 15px;
+    transition: all .3s ease-out;
+
+}
+
+.resenhas .card-item .resenha-livro{
+  font-size: 15px;
+  padding: 0 7px;
+  transition: all .3s ease-out;
+}
+
+
+.resenhas .card-item:hover{
+    background-color: #637abe90;
+    margin-top: -5px;
+}
+  
+.resenhas .card-item:hover .nome-User{
+   color: #080d1e;
+}
+  
+
+.botaoCard:hover{
+    color: #080d1e;
+    font-weight: bold;
+    transition: all .4s ease-out;
+}
+
+.botaoCard{
+    color: #ffffff;
+}
+
+/* estlizando votacao */
+
+
+.texto{
+    background-color: #1d2951;
+    display: block;
+
+}
+
+.texto h1{
+    text-align: center;
+    padding-top: 50px;
+    font-weight: 250px;
+    font-size: 50px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+
+.texto p{
+    padding: 30px;
+    text-align: center;
+    font-size: 23PX;
+    color: #c8c5c5;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+
+.conteiner3{
+    background-color: #1d2951;
+    display: flex;
+    justify-content: space-between;
+
+    
+}
+
+.conteiner3 .enquete{
+    width: 430px;
+    margin-top: 45px;
+    background-color: rgb(74, 88, 135);
+    padding: 30px; /* aumentar o card */
+    border-radius: 4%;
+    box-shadow:3px 3px 1px 0px #00000080 ;  
+    /* sombras */ 
+    margin-right: 150px;
+    margin-left: 150px;
+   
+}
+
+.conteiner3 .dashborad{
+    height: 800px;
+    width: 500px;
+    margin-right: 120px;
+    margin-top: 80px;
+}
+
+
+
+.enquete .tituloCard{
+    margin-left: 70px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+
+}
+
+
+.enquete input{
+ margin: 5px;
+ font-weight: bold;
+}
+
+.form {
+    margin-top: 13px;
+    margin-bottom: 5%;
+    padding-top: 5%;
+    /* ambas controlam o posicionamento e o espaçamento dos elementos
+    margin-top = margem superior
+    margin-bottom =margem inferior
+    padding-top = espaço interno entre o conteúdo e a borda */
+}
+
+
+.botaoJustifique{
+    display: flex;
+    justify-content: center;
+}
+
+.enquete .botaoEnquete{
+    height: 50px;
+    width: 50%;
+    background-color: #0b132f;
+    border-color: #0b132f;
+    color: whitesmoke;
+    font-weight: bold; 
+    font-size: 13pt;  
+    margin-top: 15px;
+    border-radius: 10px;
+    outline: none;
+    transition: all .5s ease-out;
+}
+
+.enquete .botaoEnquete:hover{
+    background-color: #9e4200;
+    border-color: #fde0cb;
+    cursor: pointer;
+    color: wheat;
+
+}
+
+/*pagina sobre */
+#texto-sobre{
+border-radius: 15px;
+padding: 15px;
+font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+
+.sobre .contSobre{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #25315c;
+   height: 500px;
+
+}
+
+.sobre .sobre-text{
+    width: 50%;
+    padding-right: 40px;
+
+   
+}
+
+
+.sobre .sobre-text p{
+    margin: 20px;
+    color: #e9ded6;
+    font-size: 20px;
+    margin-left: 100px; 
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.sobre .sobre-text p.pOnu{
+    margin-right: 0;
+}
+
+.sobre .sobre-text p.pMalala{
+    margin-left: 0;
+}
+
+
+.sobre .sobre-text .h3{
+font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+margin-top: 65px;
+
+}
+
+.sobre .sobre-text .h3b{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+
+    
+}
+
+.sobre .sobre-img{
+   width: 50%;
+}
+
+.sobre .sobre-img img{
+    width: 70%;
+   margin-top: 40px;
+   margin-left: 110px;
+    border-radius: 10px;
+}
+/* 
+ arrumando valores */
+ .valores {
+    background-color: #52639a;
+    height: 550px;
+}
+
+.valores h3{
+    text-align: center;
+    padding-top: 72px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 70px;
+    font-weight: bold;
+    
+}
+
+.valores .contValores > p{
+    text-align: center;
+    color: #c8c5c5;
+    font-size: 19px;
+}
+
+.valores .valoresCard{
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.valores .unidadeCard{
+ background-color: #1d2951;
+ width: 350px;
+ padding: 20px;
+ border-radius: 14px;
+ margin: 15px;
+}
+
+.valores .unidadeCard img{
+    background-color: #7c8dc5;
+    border-radius: 14px;
+    width: 70px;
+    padding: 9px;
+}
+
+   
+.valores .unidadeCard:hover p
+{
+   color: white ;
+   font-weight: 500;
+} 
+
+.valores .unidadeCard p
+{
+   color: #dbd8d8;
+   
+} 
+
+.valores .unidadeCard:hover{
+    background-color: #7c8dc5;
+    transition: 0.3;
+}
+
+.valores .unidadeCard p.nome-valores{
+  margin: 5px 0;
+  transition: 0.3s;
+}
+
+.valores .unidadeCard p.descricao{
+   transition: 0.3s;
+  
+}

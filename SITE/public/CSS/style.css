@@ -389,9 +389,47 @@ font-weight: bold;
 
 .enquete .botaoEnquete:hover{
     background-color: #9e4200;
-    border-color: #9e4200;
+    border-color: #fde0cb;
     cursor: pointer;
     color: wheat;
 
 }
 
+/*pagina sobre */
+#texto-sobre{
+border-radius: 15px;
+padding: 15px;
+font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+
+.sobre .contSobre{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #e3dfdf;
+   height: 500px;
+
+}
+
+.sobre .sobre-text{
+    width: 50%;
+    padding-right: 40px;
+   
+}
+
+.sobre .sobre-text p{
+    margin: 18px 0;
+    color: #000000a6;
+}
+
+.sobre .sobre-img{
+   width: 50%;
+}
+
+.sobre .sobre-img img{
+    width: 70%;
+   margin-top: 40px;
+   margin-left: 100px;
+    border-radius: 10px;
+ }
