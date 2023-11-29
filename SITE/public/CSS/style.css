@@ -229,7 +229,7 @@ font-weight: bold;
     text-align: center;
     border-radius: 14px;  
     margin: 15px;
-    width: 350px;
+    width: 370px;
     height: 400px;
     transition: all .4s ease-out;
 }
@@ -294,7 +294,7 @@ font-weight: bold;
 .texto{
     background-color: #1d2951;
     display: block;
-
+ 
 }
 
 .texto h1{
@@ -319,6 +319,7 @@ font-weight: bold;
     background-color: #1d2951;
     display: flex;
     justify-content: space-between;
+    height: 550px;
 
     
 }
@@ -394,42 +395,3 @@ font-weight: bold;
     color: wheat;
 
 }
-
-/*pagina sobre */
-#texto-sobre{
-border-radius: 15px;
-padding: 15px;
-font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-}
-
-
-.sobre .contSobre{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background-color: #e3dfdf;
-   height: 500px;
-
-}
-
-.sobre .sobre-text{
-    width: 50%;
-    padding-right: 40px;
-   
-}
-
-.sobre .sobre-text p{
-    margin: 18px 0;
-    color: #000000a6;
-}
-
-.sobre .sobre-img{
-   width: 50%;
-}
-
-.sobre .sobre-img img{
-    width: 70%;
-   margin-top: 40px;
-   margin-left: 100px;
-    border-radius: 10px;
- }

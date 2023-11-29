@@ -17,7 +17,6 @@
         <ul class="linkLogin">
             <li><a href="index.html">Início</a></li>
             <li><a href="sobre.html">Sobre</a></li>
-            <li><a href="eventos.html">Eventos</a></li>
             <li><a href="cadastro.html">Cadastro</a></li>
             <li><a href="login.html" id="login-link">Já tem uma conta?</a></li>
         </ul>
@@ -35,7 +34,7 @@
 
         <article>
             <!-- tag semantica para abrigar imagens -->
-            <form>
+            <!-- <form>  -->
             
                 <div id="msgError"></div>
                 <div id="msgSuccess"></div>
@@ -83,7 +82,7 @@
                       </p>
                   </div>
             <!-- tag semantica para campos de pesquisa -->
-            </form>
+            <!-- </form> -->
         </article>
     </main>
    
@@ -98,8 +97,8 @@ var btnConfirm = document.querySelector('#verConfirmarSenha');
 var nome= document.querySelector('#nome');
 var labelNome= document.querySelector('#labelNome');
 
-var usuario= document.querySelector('#usuario');
-var labelUsuario= document.querySelector('#labelUsuario');
+var apelido= document.querySelector('#usuario');
+var labelApelido= document.querySelector('#labelUsuario');
 
 var senha= document.querySelector('#senha');
 var labelSenha= document.querySelector('#labelSenha');
@@ -114,7 +113,7 @@ var confirmarEmail= document.querySelector('#confirmarEmail');
 var labelConfirmarEmail = document.querySelector('#labelConfirmarEmail');
 
 var validNome = false;
-var validUsuario = false;
+var validApelido = false;
 var validSenha = false;
 var validConfirme = false;
 var validEmail = false;
@@ -139,17 +138,17 @@ nome.addEventListener('keyup', () => {
     }
 })
  
-usuario.addEventListener('keyup', () => { 
+apelido.addEventListener('keyup', () => { 
     if(usuario.value.length <= 4){
-        labelUsuario.setAttribute('style', 'color: red')
-        labelUsuario.innerHTML = 'Usuário *Insira no mínimo 5 caracteres'
-        usuario.setAttribute('style', 'border-color: red')
-        validUsuario = false
+        labelApelido.setAttribute('style', 'color: red')
+        labelApelido.innerHTML = 'Usuário *Insira no mínimo 5 caracteres'
+        apelido.setAttribute('style', 'border-color: red')
+        validApelido = false
     }else{
-        labelUsuario.setAttribute('style', 'color: green')
-        labelUsuario.innerHTML = 'Usuário'
-        usuario.setAttribute('style', 'border-color: green')
-        validUsuario = true
+        labelApelido.setAttribute('style', 'color: green')
+        labelApelido.innerHTML = 'Usuário'
+        apelido.setAttribute('style', 'border-color: green')
+        validApelido = true
     }
 })
 
@@ -210,26 +209,6 @@ confirmarEmail.addEventListener('keyup', () => {
 })
 
 
-function cadastrar(){
-    if(validNome && validUsuario && validSenha && 
-    validConfirme){0
-        msgSuccess.setAttribute('style', 'display: block')
-        msgSuccess.innerHTML = `<strong>Cadastrando usuário...</strong>`
-        msgError.setAttribute('style', 'display: none')
-        msgError.innerHTML = ``
-
-        setTimeout(()=>{
-            window.location.href = 'file:///c%3A/Users/ASUS/OneDrive/Documentos/Projeto-Individual/login.html'
-        }, 3000)
-        // redirecionamento de tela com tempo de espera de 3s
-    } else {
-        msgError.setAttribute('style', 'display: block')
-        msgError.innerHTML = `<strong>Preencha todos os campos corretamente antes de cadastrar</strong>`
-        msgSuccess.setAttribute('style', 'display: none')
-        msgSuccess.innerHTML = ``
-    }
-}
-
 btn.addEventListener('click', ()=>{
     let inputSenha = document.querySelector('#senha')
     
@@ -257,30 +236,25 @@ btnConfirm.addEventListener('click', ()=>{
 
 <script>
     function cadastrar() {
-      aguardar();
   
       //Recupere o valor da nova input pelo nome do id
       // Agora vá para o método fetch logo abaixo
       var nomeVar = nome.value;
-      var usuarioVar = usuario.value;
+      var apelidoVar = apelido.value;
       var emailVar = email.value;
       var senhaVar = senha.value;
       if (
         nomeVar == "" ||
         emailVar == "" ||
         senhaVar == "" ||
-        usuarioVar == "" 
+        apelidoVar == "" 
       ) {
         cardErro.style.display = "block";
         mensagem_erro.innerHTML =
           "(Mensagem de erro para todos os campos em branco)";
   
-        finalizarAguardar();
         return false;
-      } else {
-        setInterval(sumirMensagem, 5000);
-      }
-  
+    }
       // Enviando o valor da nova input
       fetch("/usuarios/cadastrar", {
         method: "POST",
@@ -293,31 +267,31 @@ btnConfirm.addEventListener('click', ()=>{
           nomeServer: nomeVar,
           emailServer: emailVar,
           senhaServer: senhaVar,
-          usuarioServer: usuarioVar,
+          apelidoServer: apelidoVar
+          ,
         }),
       })
         .then(function (resposta) {
           console.log("resposta: ", resposta);
   
           if (resposta.ok) {
-            cardErro.style.display = "block";
+
+            console.log("DENTRO DO IF DO CADASTRAR")
+            // cardErro.style.display = "block";
   
-            mensagem_erro.innerHTML =
-              "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
+            // mensagem_erro.innerHTML =
+            //   "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
   
             setTimeout(() => {
               window.location = "login.html";
-            }, "2000");
+            }, "3000");
   
-            limparFormulario();
-            finalizarAguardar();
           } else {
             throw "Houve um erro ao tentar realizar o cadastro!";
           }
         })
         .catch(function (resposta) {
           console.log(`#ERRO: ${resposta}`);
-          finalizarAguardar();
         });
   
       return false;

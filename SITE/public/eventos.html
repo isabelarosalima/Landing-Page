@@ -4,11 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./CSS/style.css">
+    <link rel="stylesheet" href="CSS/sobre.css">
+    <link rel="stylesheet" href="CSS/footer.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <title>Literacia Conectada</title>
 </head>
 <body>
-    <header style="background-image: url('./IMG/menina-lendo.webp')">  
+    <header style="background-image: url('./IMG/portal-lunetas-ivros-que-acompanham-as-criancxxas-no-aprendizado-diaxxrio.webp')">  
     <!-- tags semânticas -->
         <div class="container">
             <!-- classe "container" é usada para envolver o conteúdo principal da página, ajudando a controlar o layout e a largura do conteúdo. -->
@@ -52,46 +55,234 @@
     </div>
 </section>
 
-<section class="resenhas">
-    <div class="container">
-        <h3>RESENHAS</h3>
-        <p>As resenhas a seguir são dos livros que serão abordados em eventos futuros. <br> Não esqueça de <span>VOTAR</span> no titulo que mais te interessa para ser o ganhador. <br>
-        Clique <a href="servicos.html" class="linkAqui">aqui</a> para ser guiado para a seção de eventos e fique por dentro de tudo! </p> 
-        <div class="cardsResenhas">
-            <!-- card 1 -->
-            <div class="card-item">
-                <img src="./IMG/mulherxinhas.png" alt="Nome ">
-                <p class="nome-User">Mulherzinhas</p>
-                <p class="resenha-livro">
-                    As resenhas a seguir são dos livros que serão abordados em eventos futuros 
-                </p>
-                <a href="sobre.html" class="botaoCard">Ler resenha completa </a>
-                
-            </div>
-            <!-- end card item 1 -->
-            <!-- card 2 -->
-            <div class="card-item">
-                <img src="./IMG/jogos-vorazes-suzanne-collins.jpg" alt="Nome ">
-                <p class="nome-User">Jogos Vorazes</p>
-                <p class="resenha-livro">
-                As resenhas a seguir são dos livros que serão abordados em eventos futuros. 
-                </p>
-                <a href="sobre.html" class="botaoCard">Ler resenha completa </a>
-            </div>
-            <!-- end card item 2 -->
-            <!-- card 3 -->
-            <div class="card-item">
-                <img src="./IMG/miseraveis.jpeg" alt="NEUGIERHIme ">
-                <p class="nome-User">Os miseraveis</p>
-                <p class="resenha-livro">
-                    As resenhas a seguir são dos livros que serão abordados em eventos futuros 
-                </p>
-                <a href="sobre.html" class="botaoCard">Ler resenha completa</a> 
-            </div>
-            <!-- end card item 3 -->
-        </di+v>
+
+<section class="sobre">
+    <div class="contSobre">
+        <div class="sobre-img">
+            <img src="IMG/R.jpeg" alt="sobre">
+        </div>
+        
+        <div class="sobre-text">
+            <h3  class="h3b" >Malala e ONU</h3>
+            <p class="pMalala">Malala Yousafzai é uma ativista paquistanesa que ficou internacionalmente conhecida por defender o direito das mulheres de terem acesso à educação. <br> Ela reforça que toda a sociedade ganha quando há <span style="color: #e0650d;">direitos e oportunidades para todos</span>, sem distinções ou hierarquizações de gênero, raça ou classe. <br>Em seu discurso na ONU, ela convocou todos os governos a assegurar a educação obrigatória livre para todas as crianças do mundo</p>
+        </div>
     </div>
 </section>
 
+
+
+<section class="valores">
+    <div class="contValores">
+        <h3>VALORES</h3>
+        <p>A exposição à linguagem literária é construída por diversos valores <br>que estão presentes na criação deste projeto.</p>
+
+        <div class="valoresCard">
+
+            <div class="unidadeCard">
+                <img src="./IMG/comunicacao.png" alt="">
+                <p class="nome-valores"><strong> <span style="color: #e0650d;">Comunicação e compreensão</span></strong></p>
+                <p class="descricao">A leitura contribui para o desenvolvimento das habilidades de comunicação, escrita,expressão e uma compreensão mais profunda das diferentes perspectivas.</p>
+            </div>
+
+            <div class="unidadeCard">
+                <img src="./IMG/diversidade.png" alt="">
+                <p class="nome-valores"><strong> <span style="color: #e0650d;">Diversidade Cultural</span> </strong></p>
+                <p class="descricao">A leitura de diferentes autores e gêneros literários oferece insights sobre culturas diversas, promovendo a compreensão e empatia.</p>
+            </div>
+
+            <div class="unidadeCard">
+                <img src="./IMG/acho.png" alt="">
+                <p class="nome-valores"><strong><span style="color: #e0650d;">Pensamento Crítico</span></strong></p>
+                <p class="descricao">A leitura desafia os leitores a pensar criticamente, questionar ideias e desenvolver uma mente analítica.</p>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+
+
+<div class="texto">
+    <h1>ENQUETE DE VOTAÇÃO</h1>
+    <p>Vote no livro que realmente mexeu com você para ser o destaque no próximo evento literário. <br>Participe da decisão e faça parte desse evento que celebra a diversidade de narrativas. <br> <span>Faça sua escolha!</span>  </p>
+</div>
+
+<section class="votacao">
+    <div class="conteiner3">
+            <form id="pollForm">
+                <div class="enquete" style="background-image: url(./IMG/LIVROS.png);">
+                    <h2 class="tituloCard"> vote no livro de sua preferência </h2>
+                
+                      <div class='form'>
+                          <input type='radio' name="pollOption" id='opcao1' value="opção 1">
+                          <label for='opcao1'>Mulherzinhas</label>
+                      </div>
+                    
+                      <div class='form'>
+                          <input type='radio' name="pollOption" id='opcao2' value="opção 2">
+                          <label for='opcao2'>Jogos Vorazes</label>
+                      </div>
+    
+                      <div class='form'>
+                        <input type='radio' name="pollOption" id='opcao3' value="opção 3">
+                        <label for='opcao3'>Os miseráveis</label>
+                    </div>
+                    
+                    <div class="botaoJustifique">
+                        <button type="button" onclick="vote()" class="botaoEnquete">Votar</button>
+                    </div>
+
+                    <div id="result"></div>
+
+                </div>
+            </form>
+       
+            <div class="dashborad" style="width: 400px; margin-bottom: 300px;">
+                <canvas id="myChart">
+
+
+                </canvas>
+            </div>
+    </div>
+</section>
+
+
+
+<footer>
+    <div id="footer_content">
+        <div id="footer_contacts">
+            <h1>Literacia Conectada</h1>
+            <p>conectando gerações</p>
+
+            <div id="footer_social_media">
+                <a href="https://www.instagram.com/" class="footer-link" id="instagram">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+
+                <a href="https://pt-br.facebook.com/" class="footer-link" id="facebook">
+                    <i class="fa-brands fa-facebook-f"></i>
+                </a>
+            </div>
+        </div>
+        
+    </div>
+    <div id="footer_copyright">
+        &#169
+        2023 by Isabela Rosa
+    </div>
+</footer>
+
+
 </body>
 </html>
+
+
+<script>
+    function vote() {
+        var selectedOption = document.querySelector('input[name="pollOption"]:checked');
+    
+        if (selectedOption) {
+            var resultDiv = document.getElementById('result');
+            resultDiv.innerHTML = 'Você votou em: ' + selectedOption.value;
+        } else {
+            alert('Por favor, selecione uma opção antes de votar.');
+        }
+    }
+    
+    const ctx = document.getElementById('myChart');
+    
+    new Chart(ctx, {
+        type: 'pie',
+        data: {
+            labels: ['Mulherzinhas', 'Jogos Vorazes', 'Os miseráveis'],
+            datasets: [{
+                label: 'RANKING',
+                backgroundColor: ['#FF4500',   '#FF8C00',
+                '#FFD700'] ,  
+                borderColor: ['#FF4500','#FF8C00',
+                '#FFD700'],      
+                data: [45, 98, 68],   
+                borderWidth: 1              
+            }]
+        },
+        options: {
+            indexAxis: 'y',
+            plugins: {
+                legend: {
+                    labels: {
+                        color: '#CFDEF1'
+                    }
+                }
+            },
+            scales: {
+                x: {
+                    grid: {
+                        color: '#44595B'
+                    },
+                    ticks: {
+                        color: '#CFDEF1'
+                    }
+                    
+                },
+                y: {
+                    beginAtZero: true,
+                    grid: {
+                        color: '#44595B'
+                    },
+                    ticks: {
+                        color: '#CFDEF1'
+                    }
+                }
+            }
+        }
+    });
+    
+    </script>
+
+    
+new Chart(ctx, {
+    type: 'pie',
+    data: {
+        labels: ['Mulherzinhas', 'Jogos Vorazes', 'Os miseráveis'],
+        datasets: [{
+            label: 'RANKING',
+            backgroundColor: ['#FF4500',   '#FF8C00',
+            '#FFD700'] ,  
+            borderColor: ['#FF4500','#FF8C00',
+            '#FFD700'],      
+            data: [45, 98, 68],   
+            borderWidth: 1              
+        }]
+    },
+    options: {
+        indexAxis: 'y',
+        plugins: {
+            legend: {
+                labels: {
+                    color: '#CFDEF1'
+                }
+            }
+        },
+        scales: {
+            x: {
+                grid: {
+                    color: '#44595B'
+                },
+                ticks: {
+                    color: '#CFDEF1'
+                }
+                
+            },
+            y: {
+                beginAtZero: true,
+                grid: {
+                    color: '#44595B'
+                },
+                ticks: {
+                    color: '#CFDEF1'
+                }
+            }
+        }
+    }
+});

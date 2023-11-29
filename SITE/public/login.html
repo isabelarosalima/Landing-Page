@@ -18,7 +18,6 @@
         <ul class="linkLogin">
             <li><a href="index.html">Início</a></li>
             <li><a href="sobre.html">Sobre</a></li>
-            <li><a href="eventos.html">Eventos</a></li>
             <li><a href="cadastro.html">Cadastro</a></li>
             <li><a href="login.html" id="login-link">Já tem uma conta?</a></li>
         </ul>
@@ -31,11 +30,10 @@
             <h2 style="margin-left: 60px;">e viva novas aventuras</h2>
 
             <p style="color: #c8c5c5; margin-left: 80px;">De volta? Ótimo vê-lo novamente! Faça o login e esteja pronto para <span style="color: #dfbe06;">embarcar</span>  em novas aventuras conosco. Estamos ansiosos para <span style="color: #dfbe06;"> explorar</span>  novos horizontes juntos. Sua jornada continua agora! </p>
-            <img src="./IMG/LIVROS.png" alt="" style="height: 270px; width: 320px; margin-left: 100px; margin-top: 50px;">
         </aside>
     
         <article>
-            <form id="loginForm" onsubmit="return botaoEntrar()">
+            <!-- <form id="loginForm" onsubmit="return botaoEntrar()"> -->
                 <div class='card'>
                     <h1 class="tituloCard"> login </h1>
                 
@@ -51,7 +49,7 @@
                       </div>
           
                       <div class="justify-center">
-                        <input onclick="botaoEntrar()" type="submit" value="enviar">
+                        <button onclick="botaoEntrar()">enviar</button>
                     </div>
           
                       <div class="justify-center">
@@ -62,7 +60,7 @@
                           <a href="cadastro.html" style="color: black;">Cadastre-se</a>
                       </p> 
                     </div>     
-            </form>
+            <!-- </form> -->
         </article>
     </main>
    
@@ -85,56 +83,70 @@
         })
         /*inserir um evento que logo em seguida acontecerá algo */
 
+
 function botaoEntrar() {
-    //estou obtendo os valores dos campos email e senha do formulário
-    var email = document.getElementById('email').value;
-    var senha = document.getElementById('senha').value;
 
-    //verificação para confirmar se os campos estão preenchidos
-    if (email == "" || senha == "") {
-        alert("Preencha todos os campos!");
-    } else {
-        //solicitação de autenticação usando fetch
-        fetch("/usuarios/autenticar", { 
-            //comando fetch = API que realiza solicitações HTTP assíncronas, é usado para buscar recursos de outra rede
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            //enviando dados como JSON
-            body: JSON.stringify({
-                emailServer: email,
-                senhaServer: senha
-            })
-        })
-        .then(function (resposta) {
-            //tratamento de resposta
-            if (resposta.ok) {
-                //conventendo a responsta em JSON
-                resposta.json().then(json => {
-                    console.log(json);
+    var emailVar = email.value;
+    var senhaVar = senha.value;
 
-                    //armazenando dados
-                     sessionStorage.EMAIL_USUARIO = json.email;
-                     sessionStorage.SENHA_USUARIO = json.senha;
-                    
-                    //redirecionamento
-                    setTimeout(function () {
-                        window.location = "file:///c%3A/Users/ASUS/OneDrive/%C3%81rea%20de%20Trabalho/Landing-Page/SITE/public/login.html";
-                    }, 500);
-                });
-            } else { //alerta de erro
-                alert("Os dados inseridos não foram encontrados");
-                console.log("Houve um erro ao tentar realizar o login!");
-            }
-        }).catch(function (erro) {
-            //capiturando erros
-            console.log(erro);
-        });
-        //impede o ebio do formulário
+    if (emailVar == "" || senhaVar == "") {
+        cardErro.style.display = "block"
+        mensagem_erro.innerHTML = "(Mensagem de erro para todos os campos em branco)";
         return false;
     }
-}
- //DIFERENÇA DE GETELEMENTBYID E QUERYSELECTOR = p byId é específico para a obtenção de um elemento com base em seu ID. É geralmente mais rápido do que querySelector quando você está apenas procurando por um ID específico, porque a pesquisa é otimizada para identificadores exclusivos.
+    else {
+        // setInterval(sumirMensagem, 5000)
+    }
+
     
+    fetch("/usuarios/autenticar", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            emailServer: emailVar,
+            senhaServer: senhaVar
+        })
+    }).then(function (resposta) {
+        console.log("ESTOU NO THEN DO entrar()!")
+
+        if (resposta.ok) {
+            console.log(resposta);
+
+            resposta.json().then(json => {
+                console.log(json);
+                console.log(JSON.stringify(json));
+                sessionStorage.EMAIL_USUARIO = json.email;
+                sessionStorage.SENHA_USUARIO = json.senha;
+                sessionStorage.ID_USUARIO = json.idUsuario;
+
+
+                setTimeout(function () {
+                    window.location = "eventos.html";
+                }, 1000); // apenas para exibir o loading
+
+            });
+
+        } else {
+
+            console.log("Houve um erro ao tentar realizar o login!");
+
+            resposta.text().then(texto => {
+                console.error(texto);
+                finalizarAguardar(texto);
+            });
+        }
+
+    }).catch(function (erro) {
+        console.log(erro);
+    })
+
+    return false;
+}  
+
 </script>
+
+
+
+
