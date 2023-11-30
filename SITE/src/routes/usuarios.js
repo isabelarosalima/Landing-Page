@@ -16,4 +16,8 @@ router.post("/dashboard", function (req, res) {
     usuarioController.dashboard(req, res);
 });
 
+router.post("/enqueteResultado", function (req, res) {
+    usuarioController.enqueteResultado(req, res);
+});
+
 module.exports = router;

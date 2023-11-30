@@ -23,12 +23,11 @@ function autenticar(req, res) {
                     //     aquarioModel.buscarAquariosPorEmpresa(resultadoAutenticar[0].empresaId)
                     //         .then((resultadoAquarios) => {
                     //             if (resultadoAquarios.length > 0) {
-                    //                 res.json({
-                    //                     id: resultadoAutenticar[0].id,
-                    //                     email: resultadoAutenticar[0].email,
-                    //                     nome: resultadoAutenticar[0].nome,
-                    //                     senha: resultadoAutenticar[0].senha,
-                    //                 });
+                                    res.json({
+                                        idUsuario: resultadoAutenticar[0].idUsuario,
+                                        email: resultadoAutenticar[0].email,
+                                        // senha: resultadoAutenticar[0].senha,
+                                    });
                     //             } else {
                     //                 res.status(204).json({ aquarios: [] });
                     //             }
@@ -87,7 +86,65 @@ function cadastrar(req, res) {
     }
 }
 
+
+function dashboard(req, res) {
+   
+        // Passe os valores como parâmetro e vá para o arquivo usuarioModel.js
+        usuarioModel.dashboard()
+            .then(
+                function (resultado) {
+                    res.json({
+                        livro1: resultado[0].Mulherzinhas,
+                        livro2: resultado[0].JogosVorazes,
+                        livro3: resultado[0].OsMiseraveis
+
+                    });
+                }
+            ).catch(
+                function (erro) {
+                    console.log(erro);
+                    console.log(
+                        "\nHouve um erro ao realizar o cadastro! Erro: ",
+                        erro.sqlMessage
+                    );
+                    res.status(500).json(erro.sqlMessage);
+                }
+            );
+    // }
+}
+
+
+function enqueteResultado(req, res) {
+    // Crie uma variável que vá recuperar os valores do arquivo cadastro.html
+    var usuario = req.body.usuarioServer;
+    var qnt1 = req.body.qnt1Server;
+    var qnt2 = req.body.qnt2Server;
+    var qnt3 = req.body.qnt3Server;
+
+        // Passe os valores como parâmetro e vá para o arquivo usuarioModel.js
+        usuarioModel.enqueteResultado(qnt1, qnt2, qnt3, usuario)
+            .then(
+                function (resultado) {
+                    res.json(resultado);
+                }
+            ).catch(
+                function (erro) {
+                    console.log(erro);
+                    console.log(
+                        "\nHouve um erro ao realizar o cadastro! Erro: ",
+                        erro.sqlMessage
+                    );
+                    res.status(500).json(erro.sqlMessage);
+                }
+            );
+}
+
+
+
+
 module.exports = {
     autenticar,
-    cadastrar
+    cadastrar,
+    dashboard,
+    enqueteResultado
 }

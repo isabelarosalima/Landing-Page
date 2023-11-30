@@ -10,7 +10,8 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <title>Literacia Conectada</title>
 </head>
-<body>
+<body onload="graficoResultado()">
+
     <header style="background-image: url('./IMG/portal-lunetas-ivros-que-acompanham-as-criancxxas-no-aprendizado-diaxxrio.webp')">  
     <!-- tags semânticas -->
         <div class="container">
@@ -70,10 +71,9 @@
 </section>
 
 
-
 <section class="valores">
     <div class="contValores">
-        <h3>VALORES</h3>
+        <h3>DICAS DE LEITURA</h3>
         <p>A exposição à linguagem literária é construída por diversos valores <br>que estão presentes na criação deste projeto.</p>
 
         <div class="valoresCard">
@@ -102,6 +102,49 @@
 </section>
 
 
+<section class="resenhas">
+    <div class="container">
+        <h3>RESENHAS</h3>
+        <p>As resenhas a seguir são dos livros que serão abordados em eventos futuros. <br> Não esqueça de <span>VOTAR</span> no titulo que mais te interessa para ser o ganhador. <br>
+        Clique <a href="servicos.html" class="linkAqui">aqui</a> para ser guiado para a seção de eventos e fique por dentro de tudo! 
+        </p> 
+        <div class="cardsResenhas">
+            <!-- card 1 -->
+            <div class="card-item">
+                <img src="./IMG/mulherxinhas.png" alt="Nome ">
+                <p class="nome-User">MULHERZINHAS</p>
+                <p class="resenha-livro">
+                    As quatro irmãs vivem a sua infância e adolescência, no período em que o seu pai vai para a guerra. Enquanto o Sr. March está fora elas ficam ao cuidado da sua mãe e da empregada Ana, destacando as dificuldades financeiras e emocionais que as irmãs March enfrentam.
+                </p>
+                <a href="https://resenhasalacarte.com.br/resenhas/mulherzinhas-louisa-may-alcott/" class="botaoCard">Ler resenha completa </a>
+                
+            </div>
+            <!-- end card item 1 -->
+            <!-- card 2 -->
+            <div class="card-item">
+                <img src="./IMG/jogos-vorazes-suzanne-collins.jpg" alt="Nome ">
+                <p class="nome-User">JOGOS VORAZES</p>
+                <p class="resenha-livro">
+                    O primeiro Livro da série de Suzanne Collins, conta a história sofrida do povo de Penem, que como castigo da revolução, eram obrigados a enviar para capital uma garota e um garoto de 12 e 18 anos de cada um dos 12 Distritos, para lutarem até a morte em uma arena. 
+                </p>
+                <a href="https://www.minhavidaliteraria.com.br/2011/10/11/resenha-jogos-vorazes-html/" class="botaoCard">Ler resenha completa </a>
+            </div>
+            <!-- end card item 2 -->
+            <!-- card 3 -->
+            <div class="card-item">
+                <img src="./IMG/miseraveis.jpeg" alt="NEUGIERHIme ">
+                <p class="nome-User">OS MISERÁVEIS</p>
+                <p class="resenha-livro">
+                    Sendo um dos livros considerados uma obra-prima da literatura, ele denuncia as injustiças e as misérias humanas, narrando a trajetória de Jean Valjean, um ex-presidiário que busca redimir seus erros e ajudar os mais pobres na França do século XIX.
+                </p>
+                <a href="miseraveis.html" class="botaoCard">Ler resenha completa</a> 
+            </div>
+            <!-- end card item 3 -->
+        </di+v>
+    </div>
+</section>
+
+
 
 <div class="texto">
     <h1>ENQUETE DE VOTAÇÃO</h1>
@@ -110,8 +153,8 @@
 
 <section class="votacao">
     <div class="conteiner3">
-            <form id="pollForm">
-                <div class="enquete" style="background-image: url(./IMG/LIVROS.png);">
+            <!-- <form id="pollForm"> -->
+                <div class="enquete" style="background-image: url(./IMG/LIVROS.png); height: 400px;">
                     <h2 class="tituloCard"> vote no livro de sua preferência </h2>
                 
                       <div class='form'>
@@ -136,9 +179,9 @@
                     <div id="result"></div>
 
                 </div>
-            </form>
+            <!-- </form> -->
        
-            <div class="dashborad" style="width: 400px; margin-bottom: 300px;">
+            <div class="dashborad">
                 <canvas id="myChart">
 
 
@@ -146,8 +189,6 @@
             </div>
     </div>
 </section>
-
-
 
 <footer>
     <div id="footer_content">
@@ -181,108 +222,162 @@
 <script>
     function vote() {
         var selectedOption = document.querySelector('input[name="pollOption"]:checked');
-    
+        var qnt1Var = 0
+        var qnt2Var = 0
+        var qnt3Var = 0
+
         if (selectedOption) {
             var resultDiv = document.getElementById('result');
             resultDiv.innerHTML = 'Você votou em: ' + selectedOption.value;
         } else {
             alert('Por favor, selecione uma opção antes de votar.');
         }
+
+
+        if(selectedOption.value == 'opção 1' ){
+
+            qnt1Var++;
+
+        }else if(selectedOption.value == 'opção 2' ){
+
+            qnt2Var++;
+
+        }else{
+
+            qnt3Var++;
+
+        }
+
+        console.log(qnt1Var, qnt2Var, qnt3Var)
+
+        fetch("/usuarios/enqueteResultado", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          // crie um atributo que recebe o valor recuperado aqui
+          // Agora vá para o arquivo routes/usuario.js
+          usuarioServer:  sessionStorage.ID_USUARIO,
+          qnt1Server: qnt1Var,
+          qnt2Server: qnt2Var,
+          qnt3Server: qnt3Var,
+
+        }),
+      })
+        .then(function (resposta) {
+          console.log("resposta: ", resposta);
+  
+          if (resposta.ok) {
+            window.location.reload()
+            console.log("DENTRO DO IF DO CADASTRAR")
+  
+  
+          } else {
+            throw "Houve um erro ao tentar realizar o cadastro!";
+          }
+        })
+        .catch(function (resposta) {
+          console.log(`#ERRO: ${resposta}`);
+        });
+  
+      return false;
+
     }
     
-    const ctx = document.getElementById('myChart');
+function desenhoDash(vetorLivros){
+        const ctx = document.getElementById('myChart');
+
+   new Chart(ctx, {
+       type: 'bar',
+       data: {
+           labels: ['Mulherzinhas', 'Jogos Vorazes', 'Os miseráveis'],
+           datasets: [{
+               label: 'RANKING',
+               backgroundColor: ['#FF4500',   '#FF8C00',
+               '#FFD700'] ,  
+               borderColor: ['#FF4500','#FF8C00',
+               '#FFD700'],      
+               data: vetorLivros,   
+               borderWidth: 1              
+           }]
+       },
+       options: {
+           indexAxis: 'y',
+           plugins: {
+               legend: {
+                   labels: {
+                       color: '#CFDEF1'
+                   }
+               }
+           },
+           scales: {
+               x: {
+                   grid: {
+                       color: '#44595B'
+                   },
+                   ticks: {
+                       color: '#CFDEF1'
+                   }
+                   
+               },
+               y: {
+                   beginAtZero: true,
+                   grid: {
+                       color: '#44595B'
+                   },
+                   ticks: {
+                       color: '#CFDEF1'
+                   }
+               }
+           }
+       }
+   });
+}
     
-    new Chart(ctx, {
-        type: 'pie',
-        data: {
-            labels: ['Mulherzinhas', 'Jogos Vorazes', 'Os miseráveis'],
-            datasets: [{
-                label: 'RANKING',
-                backgroundColor: ['#FF4500',   '#FF8C00',
-                '#FFD700'] ,  
-                borderColor: ['#FF4500','#FF8C00',
-                '#FFD700'],      
-                data: [45, 98, 68],   
-                borderWidth: 1              
-            }]
-        },
-        options: {
-            indexAxis: 'y',
-            plugins: {
-                legend: {
-                    labels: {
-                        color: '#CFDEF1'
-                    }
-                }
-            },
-            scales: {
-                x: {
-                    grid: {
-                        color: '#44595B'
-                    },
-                    ticks: {
-                        color: '#CFDEF1'
-                    }
-                    
-                },
-                y: {
-                    beginAtZero: true,
-                    grid: {
-                        color: '#44595B'
-                    },
-                    ticks: {
-                        color: '#CFDEF1'
-                    }
-                }
-            }
+
+function graficoResultado() {
+    fetch("/usuarios/dashboard", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
         }
-    });
+      }).then(function (resposta) {
+        console.log("ESTOU NO THEN DO entrar()!")
+
+        if (resposta.ok) {
+            console.log(resposta);
+
+            resposta.json().then(json => {
+                var vetorLivros = [Number(json.livro1), Number(json.livro2),Number(json.livro3) ]
+                console.log(vetorLivros );
+                desenhoDash(vetorLivros)
+
+
+                
+
+
+
+            });
+
+        } else {
+
+            console.log("Houve um erro ao tentar realizar o login!");
+
+            resposta.text().then(texto => {
+                console.error(texto);
+                finalizarAguardar(texto);
+            });
+        }
+
+    }).catch(function (erro) {
+        console.log(erro);
+    })
+
+    return false;
+} 
+
     
     </script>
 
-    
-new Chart(ctx, {
-    type: 'pie',
-    data: {
-        labels: ['Mulherzinhas', 'Jogos Vorazes', 'Os miseráveis'],
-        datasets: [{
-            label: 'RANKING',
-            backgroundColor: ['#FF4500',   '#FF8C00',
-            '#FFD700'] ,  
-            borderColor: ['#FF4500','#FF8C00',
-            '#FFD700'],      
-            data: [45, 98, 68],   
-            borderWidth: 1              
-        }]
-    },
-    options: {
-        indexAxis: 'y',
-        plugins: {
-            legend: {
-                labels: {
-                    color: '#CFDEF1'
-                }
-            }
-        },
-        scales: {
-            x: {
-                grid: {
-                    color: '#44595B'
-                },
-                ticks: {
-                    color: '#CFDEF1'
-                }
-                
-            },
-            y: {
-                beginAtZero: true,
-                grid: {
-                    color: '#44595B'
-                },
-                ticks: {
-                    color: '#CFDEF1'
-                }
-            }
-        }
-    }
-});
+ 
