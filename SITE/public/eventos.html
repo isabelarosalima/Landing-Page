@@ -12,7 +12,7 @@
 </head>
 <body onload="graficoResultado()">
 
-    <header style="background-image: url('./IMG/portal-lunetas-ivros-que-acompanham-as-criancxxas-no-aprendizado-diaxxrio.webp')">  
+    <header style="background-image: url('./IMG/criancas-lendo.jpg')">  
     <!-- tags semânticas -->
         <div class="container">
             <!-- classe "container" é usada para envolver o conteúdo principal da página, ajudando a controlar o layout e a largura do conteúdo. -->
@@ -33,25 +33,18 @@
 
             <section class="banner">
                 <div class="banner-text">
-                    <p>BEM-VINDO A LITERACIA CONECTADA</p>
-                    <h1>Conectando gerações através da cultura e do aprendizado</h1>
-                    <a href="sobre.html" class="paginaSaiba">@ Saiba mais </a>
+                    <p>BEM-VINDO A PÁGINA DE USUÁRIO</p>
+                    <h1>Desfrute de conteúdos exclusivos e concorra a oportunidade da sua resenha ser publicada!</h1>
                 </div>
             </section>
         </div>
     </header>
 
 <section class="SobreResenhas">
-    <div class="cards">
-     <h3>SOBRE NÓS</h3>
-     <p> A Literacia Conectada entrega um ambiente dedicado à <span> educação</span>, à <span>cultura</span> e ao <span>desenvolvimento</span> pessoal. Participe do 'Clube do Livro', onde eventos literários, e-books e materiais de estudos gratuitos convergem para formar uma comunidade engajada em crescimento constante! Explore novos horizontes com nossas resenhas e desperte seu potencial com nosso QUIZ e aproveite para criar uma lista de leitura mensal. <br>Faça parte dessa família!
+    <div class="cards" style="height:450px;">
+     <h3>FUTUROS EVENTOS</h3>
+     <p> Sua participação como membro é de extrema importância! Engajar-se significa contribuir para o crescimento, e no futuro, podermos alcançar inúmeras pessoas por meio de <br><span>eventos literários.</span> 
      </p> 
-
-
-    <div class="btns">
-     <a href="sobre.html" class="botaoSite">Clique para saber mais</a>
-     <a href="cadastro.html" class="botaoSite">Torne-se membro</a>
-    </div> 
 
     </div>
 </section>
@@ -60,40 +53,58 @@
 <section class="sobre">
     <div class="contSobre">
         <div class="sobre-img">
-            <img src="IMG/R.jpeg" alt="sobre">
+            <img src="./IMG/clubeLivro.jpeg" alt="sobre">
         </div>
         
         <div class="sobre-text">
-            <h3  class="h3b" >Malala e ONU</h3>
-            <p class="pMalala">Malala Yousafzai é uma ativista paquistanesa que ficou internacionalmente conhecida por defender o direito das mulheres de terem acesso à educação. <br> Ela reforça que toda a sociedade ganha quando há <span style="color: #e0650d;">direitos e oportunidades para todos</span>, sem distinções ou hierarquizações de gênero, raça ou classe. <br>Em seu discurso na ONU, ela convocou todos os governos a assegurar a educação obrigatória livre para todas as crianças do mundo</p>
+            <h3  class="h3b" >Futuros Eventos</h3>
+            <p class="pMalala">Como parte dos nossos planos futuros, visamos estabelecer uma série de eventos literários envolventes para fortalecer a comunidade em torno do nosso projeto. <br> Pretendemos criar um Clube do Livro, tanto presencial quanto virtual, onde <span>os membros poderão se reunir regularmente</span>  para discutir obras selecionadas. <br> Além disso, planejamos realizar Sessões de Leitura Aberta, proporcionando um espaço para compartilhar trechos significativos de escritos pessoais ou obras favoritas.
         </div>
     </div>
 </section>
 
 
+<section class="valores" style="background-color: 
+#404d7b;">
+    <div class="contValores">
+        <h3>NOS ENVIE SUA RESENHA!</h3> <br>
+        <p>Enquanto esses eventos não são possíveis, tenha a oportunidade da sua resenha ser lida e publicada aqui no site! <br> Lembre-se de enviar a versão final, já que só será possivel realizar o envio uma <span>ÚNICA VEZ!</span> <br> 
+             Qualquer descumprimento dos requisitos abaixo, sua resenha será anulada! <br>
+            1. O formato a ser enviado é<span> PDF!</span> <br>
+            2. Obrigatório ter nome e contato <br>
+        
+        <br> </p>
+
+        <form id="meuFormulario" style="background-color: #b7b1aeec; padding: 30px; border-radius: 40px;">
+            <label for="documento">Documento:</label>
+            <input type="file" id="documento" name="documento" accept=".pdf" required>
+    
+            <button type="button" onclick="enviarFormulario()" id="botaoResenha">Enviar</button>
+    
+        </form>
+
+</section>
+
 <section class="valores">
     <div class="contValores">
-        <h3>DICAS DE LEITURA</h3>
-        <p>A exposição à linguagem literária é construída por diversos valores <br>que estão presentes na criação deste projeto.</p>
+        <h3>DICAS DE LEITURA</h3> <br>
+        <p>Melhorar a experiência de leitura pode envolver vários aspectos, desde a escolha  <br> do ambiente até técnicas específicas. Aqui estão algumas dicas para ajudar <br> a aprimorar sua experiência de leitura:</p>
 
         <div class="valoresCard">
 
             <div class="unidadeCard">
-                <img src="./IMG/comunicacao.png" alt="">
-                <p class="nome-valores"><strong> <span style="color: #e0650d;">Comunicação e compreensão</span></strong></p>
-                <p class="descricao">A leitura contribui para o desenvolvimento das habilidades de comunicação, escrita,expressão e uma compreensão mais profunda das diferentes perspectivas.</p>
+                <p class="nome-valores"><strong> <span style="color: #e0650d;">Faça Anotações</span></strong></p>
+                <p class="descricao">Mantenha um caderno ou use ferramentas de anotações para registrar pensamentos, insights e perguntas enquanto lê.</p>
             </div>
 
             <div class="unidadeCard">
-                <img src="./IMG/diversidade.png" alt="">
-                <p class="nome-valores"><strong> <span style="color: #e0650d;">Diversidade Cultural</span> </strong></p>
-                <p class="descricao">A leitura de diferentes autores e gêneros literários oferece insights sobre culturas diversas, promovendo a compreensão e empatia.</p>
+                <p class="nome-valores"><strong> <span style="color: #e0650d;">Grupos de Leitura</span> </strong></p>
+                <p class="descricao">Junte-se a clubes de leitura ou grupos online para discutir livros. Isso pode adicionar uma dimensão social à sua experiência de leitura.</p>
             </div>
 
             <div class="unidadeCard">
-                <img src="./IMG/acho.png" alt="">
-                <p class="nome-valores"><strong><span style="color: #e0650d;">Pensamento Crítico</span></strong></p>
-                <p class="descricao">A leitura desafia os leitores a pensar criticamente, questionar ideias e desenvolver uma mente analítica.</p>
+                <p class="nome-valores"><strong><span style="color: #e0650d;">Respeite Seu Ritmo</span></strong></p>
+                <p class="descricao">Não se sinta pressionado a terminar um livro rapidamente. Cada pessoa tem seu próprio ritmo de leitura.</p>
             </div>
 
         </div>
@@ -110,18 +121,18 @@
         </p> 
         <div class="cardsResenhas">
             <!-- card 1 -->
-            <div class="card-item">
+            <div class="card-item" style="height: 420px;">
                 <img src="./IMG/mulherxinhas.png" alt="Nome ">
-                <p class="nome-User">MULHERZINHAS</p>
+                <p class="nome-User" style="padding: 5px;">MULHERZINHAS</p>
                 <p class="resenha-livro">
-                    As quatro irmãs vivem a sua infância e adolescência, no período em que o seu pai vai para a guerra. Enquanto o Sr. March está fora elas ficam ao cuidado da sua mãe e da empregada Ana, destacando as dificuldades financeiras e emocionais que as irmãs March enfrentam.
+                    As quatro irmãs vivem a sua infância e adolescência, no período em que o seu pai vai para a guerra. Enquanto o Sr. March está fora elas ficam ao cuidado da sua mãe e da empregada Ana, destacando as dificuldades financeiras e emocionais que as irmãs enfrentam.
                 </p>
                 <a href="https://resenhasalacarte.com.br/resenhas/mulherzinhas-louisa-may-alcott/" class="botaoCard">Ler resenha completa </a>
                 
             </div>
             <!-- end card item 1 -->
             <!-- card 2 -->
-            <div class="card-item">
+            <div class="card-item" style="height: 420px;">
                 <img src="./IMG/jogos-vorazes-suzanne-collins.jpg" alt="Nome ">
                 <p class="nome-User">JOGOS VORAZES</p>
                 <p class="resenha-livro">
@@ -131,7 +142,7 @@
             </div>
             <!-- end card item 2 -->
             <!-- card 3 -->
-            <div class="card-item">
+            <div class="card-item" style="height: 420px;">
                 <img src="./IMG/miseraveis.jpeg" alt="NEUGIERHIme ">
                 <p class="nome-User">OS MISERÁVEIS</p>
                 <p class="resenha-livro">
@@ -235,17 +246,11 @@
 
 
         if(selectedOption.value == 'opção 1' ){
-
             qnt1Var++;
-
         }else if(selectedOption.value == 'opção 2' ){
-
             qnt2Var++;
-
         }else{
-
             qnt3Var++;
-
         }
 
         console.log(qnt1Var, qnt2Var, qnt3Var)
@@ -288,7 +293,7 @@
 function desenhoDash(vetorLivros){
         const ctx = document.getElementById('myChart');
 
-   new Chart(ctx, {
+    new Chart(ctx, {
        type: 'bar',
        data: {
            labels: ['Mulherzinhas', 'Jogos Vorazes', 'Os miseráveis'],
@@ -335,7 +340,6 @@ function desenhoDash(vetorLivros){
    });
 }
     
-
 function graficoResultado() {
     fetch("/usuarios/dashboard", {
         method: "POST",
@@ -352,12 +356,6 @@ function graficoResultado() {
                 var vetorLivros = [Number(json.livro1), Number(json.livro2),Number(json.livro3) ]
                 console.log(vetorLivros );
                 desenhoDash(vetorLivros)
-
-
-                
-
-
-
             });
 
         } else {
@@ -376,8 +374,24 @@ function graficoResultado() {
 
     return false;
 } 
+/*  o comando fetch é usado para buscar dados de um servidor. O método then() é usado duas vezes para lidar com a promessa retornada pelo comando fetch. A primeira chamada ao método then() converte a resposta em um objeto JSON, enquanto a segunda imprime o objeto JSON no console 1. O método catch() é usado para lidar com erros que possam ocorrer durante a execução da promessa 3.*/
+</script>
 
-    
-    </script>
+<script>
+ function enviarFormulario() {
+    // Simulação de envio do formulário
 
- 
+    if(documento.value == ''){
+
+        alert('O campo não possui nenhum arquivo, selecione o arquivo correto em formato PDF!');
+
+    }else{
+     alert('Formulário enviado com sucesso!');
+            
+     // Desabilita o formulário após o envio
+     document.getElementById('meuFormulario').style.display = 'none';
+
+    }
+
+}
+</script>

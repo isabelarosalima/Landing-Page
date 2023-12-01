@@ -395,3 +395,30 @@ font-weight: bold;
     color: wheat;
 
 }
+
+/*arrumando envio de resenha */
+
+
+form {
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+button {
+    margin-bottom: 10px;
+    width: 100%;
+    padding: 10px;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+

@@ -126,19 +126,3 @@
 
 </body>
 </html>
-
-<script>
-function vote() {
-    var selectedOption = document.querySelector('input[name="pollOption"]:checked');
-
-    if (selectedOption) {
-        var resultDiv = document.getElementById('result');
-        resultDiv.innerHTML = 'Você votou em: ' + selectedOption.value;
-    } else {
-        alert('Por favor, selecione uma opção antes de votar.');
-    }
-}
-
-
-
-</script>

@@ -88,9 +88,10 @@
 </body>
 </html>
 
-  <script>
+<script>
 var btn = document.querySelector('#verSenha');
     /*minha variavel btn esta acessando o documento e através do querySelector eu vou procurar a minha class, logo em seguida adicionei minha class a minha variavel*/
+    /*label = declaração  */
 var btnConfirm = document.querySelector('#verConfirmarSenha');
 
 var nome= document.querySelector('#nome');
@@ -254,7 +255,7 @@ btnConfirm.addEventListener('click', ()=>{
   
         return false;
     }
-      // Enviando o valor da nova input
+      //buscando dados de forma assíncrona e retorna uma resposta 
       fetch("/usuarios/cadastrar", {
         method: "POST",
         headers: {
@@ -269,18 +270,14 @@ btnConfirm.addEventListener('click', ()=>{
           apelidoServer: apelidoVar
           ,
         }),
-      })
+      }) /*lidar com a resposta do fetch, seja ela boa ou não */
         .then(function (resposta) {
           console.log("resposta: ", resposta);
   
           if (resposta.ok) {
 
             console.log("DENTRO DO IF DO CADASTRAR")
-            // cardErro.style.display = "block";
-  
-            // mensagem_erro.innerHTML =
-            //   "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
-  
+
             setTimeout(() => {
               window.location = "login.html";
             }, "3000");
@@ -288,7 +285,7 @@ btnConfirm.addEventListener('click', ()=>{
           } else {
             throw "Houve um erro ao tentar realizar o cadastro!";
           }
-        })
+        }) /* lida com os erros*/
         .catch(function (resposta) {
           console.log(`#ERRO: ${resposta}`);
         });
